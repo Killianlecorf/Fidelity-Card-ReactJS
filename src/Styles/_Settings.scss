@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Poppins-regular";
+    src: url('../Assets/font/Poppins-Regular.ttf');
+}
+
+:root{
+    --main-color : #483CE8;
+    --main-font : poppins-regular, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    margin: 0 auto;
+}
+
+*{
+    font-family: verdana;
+}
+
