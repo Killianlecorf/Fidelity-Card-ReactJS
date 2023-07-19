@@ -1,0 +1,255 @@
+.login-formulaire-content{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content:center;
+    align-items:center ;
+
+    .login-formulaire{
+        display: flex;
+        width: 80%;
+        height: 80%;
+        background-color: rgb(245, 243, 243);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        .image-content{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid black;
+            
+            img{
+                width: 95%;
+                height: auto;
+            }
+        }
+
+        .input-content{
+            width: 50%;
+            height: 100%;
+            background-color: white;
+
+            .title-formulaire{
+                width: 100%;
+                height: 15%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h1{
+                    font-family: var(--bold-font);
+                }
+            }
+
+            .input-login{
+                width: 100%;
+                height: 70%;
+                // background-color: yellow;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .input-label{
+                    width: 80%;
+                    height: 25%;
+                    display:flex;
+                    flex-direction: column;
+
+                    input{
+                        margin-top: 15px;
+                        
+                    }
+                }
+
+                .checkbox-content{
+                    width: 80%;
+                    height: 10%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+
+                    input{
+                        margin-right: 20px;
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    input:checked{
+                        margin-right: 20px;
+                        width: 20px;
+                        height: 20px;
+                        background-color: var(--main-color);
+                    }
+                }
+
+                .submit-content{
+                    width: 80%;
+                    height: 30%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    button{
+                        width: 150px;
+                        height: 45px;
+                        background-color: var(--main-color);
+                        color: white;
+                        border: 1px solid white;
+                        font-size: 15px;
+                        cursor: pointer;
+                        font-family: var(--bold-font);
+                    }
+
+                    button:hover{
+                        width: 150px;
+                        height: 45px;
+                        background-color: white;
+                        color: var(--main-color);
+                        border: 1px solid var(--main-color);
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .forgot-password{
+                width: 100%;
+                height: 15%;
+                display: flex;
+                justify-content:center;
+                align-items: center;
+                text-align: center;
+
+                p{
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    
+}
+
+@media (max-width: 800px) {
+    
+    .login-formulaire-content{
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        justify-content:center;
+        align-items:center ;
+    
+        .login-formulaire{
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(245, 243, 243);
+            box-shadow: none;
+    
+            .image-content{
+                display: none ;
+            }
+    
+            .input-content{
+                width: 100%;
+                height: 100%;
+                background-color: white;
+
+
+                .title-formulaire{
+                    width: 100%;
+                    height: 15%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    h1{
+                        font-family: var(--bold-font);
+                    }
+                }
+    
+                .input-login{
+                    width: 100%;
+                    height: 70%;
+                    // background-color: yellow;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+    
+                    .input-label{
+                        width: 80%;
+                        height: 25%;
+                        // background-color: red;
+                        display:flex;
+                        flex-direction: column;
+    
+                        input{
+                            margin-top: 15px;
+                            
+                        }
+                    }
+    
+                    .checkbox-content{
+                        width: 80%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+    
+                        input{
+                            margin-right: 20px;
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+
+                    .submit-content{
+                        width: 80%;
+                        height: 30%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+    
+                        button{
+                            width: 150px;
+                            height: 45px;
+                            background-color: var(--main-color);
+                            color: white;
+                            border: 1px solid white;
+                            font-size: 15px;
+                            cursor: pointer;
+                            font-family: var(--bold-font);
+                        }
+    
+                        button:hover{
+                            width: 150px;
+                            height: 45px;
+                            background-color: white;
+                            color: var(--main-color);
+                            border: 1px solid var(--main-color);
+                            font-size: 15px;
+                        }
+                    }
+                }
+    
+                .forgot-password{
+                    width: 100%;
+                    height: 15%;
+                    display: flex;
+                    justify-content:center;
+                    text-align: center;
+    
+                    p{
+                        width: 80%;
+                    }
+                }
+                
+            }
+        }
+    
+        
+    }
+
+}

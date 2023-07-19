@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "Poppins-regular";
+    src: url('../Assets/font/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url('../Assets/font/Poppins-Bold.ttf');
+}
+
+:root{
+    --main-color : #483CE8;
+    --black-color : #141414 ;
+    --regular-font : poppins-regular, Verdana, Geneva, Tahoma, sans-serif;
+    --bold-font : poppins-Bold, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    margin: 0 auto;
+    color: var(--black-color);
+}
+
+input{
+    padding-left: 5px;
+    height: 30px;
+    font-size: 15px;
+    border: 2px solid var(--black-color);
+    border-radius: 5px;
+}
+
+*{
+    font-family: verdana;
+}
+
