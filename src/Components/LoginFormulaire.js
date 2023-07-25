@@ -27,7 +27,6 @@ const LoginFormulaire = () => {
             password : informationUser.password
         }
         let response = await fetchAPI('/user/login','POST',user)
-        console.log(response);
         if (response.ok) {
             // UrlRedirection('/home')
         }
