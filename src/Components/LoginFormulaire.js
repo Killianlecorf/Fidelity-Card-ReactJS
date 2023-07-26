@@ -28,7 +28,7 @@ const LoginFormulaire = () => {
         }
         let response = await fetchAPI('/user/login','POST',user)
         if (response.ok) {
-            // UrlRedirection('/home')
+            UrlRedirection('/home')
         }
         if (response.status === 401) {
             setErrorMessage('Compte introuvable')
