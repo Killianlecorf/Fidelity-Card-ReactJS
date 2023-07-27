@@ -1,26 +1,34 @@
-const request = async (url, method, bodyContent) => {
+const request = async (url: string, method: string, bodyContent?: any): Promise<any> => {
     try {
-        let options = {
+        let options: RequestInit = {
             method,
             credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             }
+        };
+
+        if (method !== 'GET' && method !== 'DELETE') {
+            options.body = JSON.stringify(bodyContent);
         }
-        if (method !== 'GET' || method !== 'DELETE') {
-            options.body = JSON.stringify(bodyContent)
-        }
+
         const response = await fetch(path + url, options);
 
-        let sentResponse = {
+        let sentResponse: {
+            ok: boolean;
+            status: number;
+            message: string;
+            data: any;
+        } = {
             ok: response.ok,
             status: response.status,
             message: response.statusText,
             data: null
-        }
+        };
 
-        if (response.status === 200)
+        if (response.status === 200) {
             sentResponse.data = await response.json();
+        }
 
         return sentResponse;
     } catch (error) {
@@ -30,11 +38,10 @@ const request = async (url, method, bodyContent) => {
             status: 500,
             message: 'Error request',
             data: null
-        }
+        };
     }
 };
 
-const path = 'http://localhost:5151/api'
-
+const path = 'http://localhost:5151/api';
 
 export default request;

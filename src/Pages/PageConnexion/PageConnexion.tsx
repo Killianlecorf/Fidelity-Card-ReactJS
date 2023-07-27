@@ -1,7 +1,7 @@
 import React from 'react';
-import LoginFormulaire from '../Components/LoginFormulaire';
+import LoginFormulaire from '../../Components/LoginFormulaire/LoginFormulaire';
 
-const PageConnexion = () => {
+const PageConnexion: React.FC = () => {
     return (
         <div>
             <div className="decoration-barre"></div>
