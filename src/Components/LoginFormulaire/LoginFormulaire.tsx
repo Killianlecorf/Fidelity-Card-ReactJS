@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-// import loginSVG from '../../Assets/img/login-svg.svg';
+import loginSVG from '../../Assets/img/login-svg.svg';
 import fetchAPI from '../../Utils/request';
 import UrlRedirection from "../../Utils/UrlRedirection";
 
@@ -59,7 +59,7 @@ const LoginFormulaire: React.FC = () => {
     <div className='login-formulaire-content'>
       <div className="login-formulaire">
         <div className="image-content">
-          {/* <img src={loginSVG} alt="connexion" /> */}
+          <img src={loginSVG} alt="connexion" />
         </div>
         <div className="input-content">
           <div className="title-formulaire">
