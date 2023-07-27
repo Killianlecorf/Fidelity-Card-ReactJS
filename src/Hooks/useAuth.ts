@@ -1,25 +1,24 @@
 import { useState, useEffect } from 'react';
-import fetchAPI from '../Utils/request'
+import fetchAPI from '../Utils/request';
 
-const useAuth = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [isLoading, setIsLoading] = useState(true)
+const useAuth = (): [boolean, boolean] => {
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        const checkAuthStatus = async () => {
+        const checkAuthStatus = async (): Promise<void> => {
             try {
                 const response = await fetchAPI('/user/isAuth', 'GET');
                 setIsAuthenticated(response.status === 200);
             } catch (error) {
-                setIsAuthenticated(false)
+                setIsAuthenticated(false);
                 console.error('Erreur lors de la vérification de l\'authentification :', error);
             }
-            setIsLoading(false)
+            setIsLoading(false);
         };
 
         checkAuthStatus();
     }, []);
-    console.log(isLoading);
     return [isAuthenticated, isLoading];
 };
 

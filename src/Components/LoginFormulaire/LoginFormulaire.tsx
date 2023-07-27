@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import loginSVG from '../Assets/img/login-svg.svg';
-import fetchAPI from '../Utils/request';
-import UrlRedirection from "../Utils/UrlRedirection";
+import loginSVG from '../../Assets/img/login-svg';
+import fetchAPI from '../../Utils/request';
+import UrlRedirection from "../../Utils/UrlRedirection";
 
-const LoginFormulaire = () => {
+const LoginFormulaire: React.FC = () => {
     const [errorMessage, setErrorMessage] = useState('')
     const [informationUser, setInformationUser] = useState({
         email : '',
@@ -35,7 +35,7 @@ const LoginFormulaire = () => {
         }
     }
 
-    const handleLogin = (event) => {
+    const handleLogin = (event: React.ChangeEvent<HTMLInputElement>) => {
         let nameInput = event.target.name;
         let userText = event.target.value;
         setInformationUser({...informationUser, [nameInput] : userText})
