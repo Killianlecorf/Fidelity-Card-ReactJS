@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../../Assets/img/logo.png'
+import logo from '../../Assets/img/logo.png';
+// import { FaUserCircle } from "react-icons/fa";
 
 const Header: React.FC = () => {
     return (
@@ -11,7 +12,7 @@ const Header: React.FC = () => {
                 <h1>Fidelity Card</h1>
             </div>
             <div className="profil-content">
-
+                {/* <FaUserCircle /> */}
             </div>
         </div>
     );
