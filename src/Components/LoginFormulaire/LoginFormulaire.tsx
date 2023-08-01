@@ -17,6 +17,7 @@ const LoginFormulaire: React.FC = () => {
     checkbox: false
   });
 
+
   const validationForm = async () => {
     if (!informationUser.checkbox) {
       setErrorMessage('Veuillez cocher la case de confirmation');

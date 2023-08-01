@@ -4,18 +4,27 @@ import { FaUserCircle, FaRegSun, FaPowerOff, FaBars} from "react-icons/fa";
 import fetchApi from '../../Utils/request'
 import UrlRedirection from '../../Utils/UrlRedirection'
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    isOpenModal : boolean;
+    setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  }
+
+const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
 
     const deleteCookie = async () => {
         await fetchApi('/user/deleteCookieUser', 'GET')
         UrlRedirection('/')
     }
 
+    const openModal = () => {
+        setIsOpenModal(!isOpenModal)
+    } 
+
     return (
         <div className='Header-content'>
             <div className="modal-header">
-                <div className="modal-sand">
-                    <FaBars />
+                <div onClick={openModal} className="modal-sand">
+                    <FaBars className={!isOpenModal ? 'icon-active': 'icon-desactive'} />
                 </div>
             </div>
             <div className="logo-content">

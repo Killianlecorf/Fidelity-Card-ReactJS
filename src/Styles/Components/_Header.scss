@@ -121,6 +121,16 @@
                 width: auto;
                 height: auto; 
                 cursor: pointer;
+
+                .icon-active{
+                    transform:  rotate(0deg);
+                    transition: .2s ease;
+                }
+
+                .icon-desactive{
+                    transform: rotate(90deg);
+                    transition: .2s ease;
+                }
             }
         }
     
