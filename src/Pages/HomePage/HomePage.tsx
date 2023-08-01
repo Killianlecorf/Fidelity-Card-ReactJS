@@ -8,14 +8,14 @@ const HomePage: React.FC = () => {
 
   const openModal = () => {
     if (isOpenModal === true) {
-      return <ModalMobile setIsOpenModal={setIsOpenModal}/>
+      return <ModalMobile isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
     }
     return
   }
 
   return (
     <div>
-        <Header setIsOpenModal={setIsOpenModal}/>
+        <Header isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
         <div className="separate-modal">
             {openModal()}
         </div>

@@ -1,17 +1,20 @@
 import React from 'react';
 
 interface modalMobileProps {
+    isOpenModal : boolean;
     setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ModalMobile :React.FC<modalMobileProps> = ({setIsOpenModal}) => {
+const ModalMobile :React.FC<modalMobileProps> = ({isOpenModal, setIsOpenModal}) => {
 
     const closeModal = () => {
-        setIsOpenModal(false)
+        if (isOpenModal === false) {
+            setIsOpenModal(true)
+        }
     }
 
     return (
-        <div onClick={closeModal} className='modal-mobile'>
+        <div className={`modal-mobile ${isOpenModal ? 'modal-mobile-open' : 'modal-mobile-close'}`} onClick={closeModal}>
             <div className="">
                 
             </div>
