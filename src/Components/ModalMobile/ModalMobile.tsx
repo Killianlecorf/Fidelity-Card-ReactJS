@@ -15,9 +15,18 @@ const ModalMobile :React.FC<modalMobileProps> = ({isOpenModal, setIsOpenModal}) 
 
     return (
         <div className={`modal-mobile ${isOpenModal ? 'modal-mobile-open' : 'modal-mobile-close'}`} onClick={closeModal}>
-            <div className="">
-                
-            </div>
+            <li>
+                <button>Statistique</button>
+            </li>
+            <li>
+                <button>Répértoire Clients</button>
+            </li>
+            <li>
+                <button>Boutique</button>
+            </li>
+            <li>
+                <button>Entreprise</button>
+            </li>
         </div>
     );
 };

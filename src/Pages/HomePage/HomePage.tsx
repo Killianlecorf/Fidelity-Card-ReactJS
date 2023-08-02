@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../../Components/Header';
 import ModalMobile from '../../Components/ModalMobile';
+import NavBar from '../../Components/NavBar';
 
 const HomePage: React.FC = () => {
 
@@ -16,6 +17,9 @@ const HomePage: React.FC = () => {
   return (
     <div>
         <Header isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
+        <div className="navbar-content">
+          <NavBar />
+        </div>
         <div className="separate-modal">
             {openModal()}
         </div>
