@@ -4,10 +4,10 @@ const NavBar = () => {
     return (
         <div className='navBar'>
             <li>
-                <button>Statistique</button>
+                <button>Statistiques</button>
             </li>
             <li>
-                <button>Répértoire Clients</button>
+                <button>Répértoire Client</button>
             </li>
             <li>
                 <button>Boutique</button>
