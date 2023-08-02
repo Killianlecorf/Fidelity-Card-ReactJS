@@ -10,7 +10,7 @@
 
 :root{
     --main-color : #483CE8;
-    --secondary-color : #483CE8 ;
+    --secondary-color : #857df8 ;
     --black-color : #141414 ;
     --white-color : rgb(255, 255, 255);
     --grey-color : #e4e4e4;
@@ -35,3 +35,6 @@ input{
     font-family: verdana;
 }
 
+li{
+    list-style-type: none;
+}

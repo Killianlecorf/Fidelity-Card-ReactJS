@@ -1,0 +1,40 @@
+.navBar{
+    width: 25vw;
+    height: 80vh;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    li{
+        width: 100%;
+
+        button{
+            width: 100%;
+            height: 10vh;
+            background-color: var(--secondary-color);
+            border: 0px 0px 5px 0px inset var(--main-color);
+            margin-top: 15px;
+            cursor: pointer;
+            color: var(--white-color);
+            font-family: var(--bold-font);
+        }
+
+        button:hover{
+            width: 100%;
+            height: 10vh;
+            background-color: rgba(31, 30, 30, 0.438);
+            border-left: 5px var(--main-color) inset;
+            margin-top: 15px;
+            cursor: pointer;
+            color: var(--white-color);
+            font-family: var(--bold-font);
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .navBar{
+        display: none;
+    }
+}
