@@ -3,6 +3,7 @@ import logo from '../../Assets/img/logo-blanc.png';
 import { FaUserCircle, FaRegSun, FaPowerOff, FaBars} from "react-icons/fa";
 import fetchApi from '../../Utils/request'
 import UrlRedirection from '../../Utils/UrlRedirection'
+import { useAuthContext } from '../../Hooks/useAuthContext';
 
 interface HeaderProps {
     isOpenModal : boolean;
@@ -10,6 +11,11 @@ interface HeaderProps {
   }
 
 const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
+
+    const { informationUser } = useAuthContext();
+
+    console.log(informationUser);
+    
 
     const deleteCookie = async () => {
         await fetchApi('/user/deleteCookieUser', 'GET')
@@ -42,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
                     </div>
                     <div className="account-header-content">
                         <div className="account-header">
-                            <p>Luzrod03</p>
+                            {informationUser ? <p>{informationUser.name}</p> : <p>Loading...</p>}
                             <FaUserCircle className='profil-icon'/>
                         </div>
                     </div>

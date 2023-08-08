@@ -50,10 +50,10 @@
             
 
             .params-header-content{
-                width: 25%;
+                width: 50%;
                 height: 100%;
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-end;
                 align-items: center;
 
                 .params-icon{
@@ -61,6 +61,7 @@
                     height: auto;
                     font-size: 25px;
                     cursor: pointer;
+                    margin-right: 35px;
                 }
 
                 .logout-Icon{
@@ -69,11 +70,12 @@
                     font-size: 25px;
                     cursor: pointer;
                     color: var(--white-color);
+                    margin-right: 15px;
                 }
             }
             
             .account-header-content{
-                width: 75%;
+                width: 50%;
                 height: 100%;
                 display: flex;
                 justify-content: center;
