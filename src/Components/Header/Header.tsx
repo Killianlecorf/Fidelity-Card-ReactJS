@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< Updated upstream
 import logo from '../../Assets/img/logo-blanc.png';
 import { FaUserCircle, FaRegSun, FaPowerOff, FaBars} from "react-icons/fa";
 import fetchApi from '../../Utils/request'
@@ -19,6 +20,10 @@ const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
     const openModal = () => {
         setIsOpenModal(!isOpenModal)
     } 
+=======
+import logo from '../../Assets/img/logo.png';
+import { FaUserCircle } from "react-icons/fa";
+>>>>>>> Stashed changes
 
     return (
         <div className='Header-content'>
@@ -34,6 +39,7 @@ const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
                 <h1>Fidelity Card</h1>
             </div>
             <div className="profil-content">
+<<<<<<< Updated upstream
                 <div className="profil-name">
                     <div className="params-header-content">
                         <FaRegSun className='params-icon'/>
@@ -46,6 +52,9 @@ const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
                         </div>
                     </div>
                 </div>
+=======
+                <FaUserCircle />
+>>>>>>> Stashed changes
             </div>
         </div>
     );
