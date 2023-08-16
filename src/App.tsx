@@ -3,18 +3,21 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import PageConnexion from "./Pages/PageConnexion/PageConnexion";
 import HomePage from "./Pages/HomePage/HomePage";
 import useAuth from "./Hooks/useAuth";
-import { UserProvider  } from './Hooks/useAuthContext';
+import {useAuthContext} from "./Hooks/useAuthContext";
 
 function App(): JSX.Element {
   const [isAuthenticated, isLoading] = useAuth();
+  const { informationUser } = useAuthContext();
 
   if (isLoading) {
     return <p>Loading...</p>;
   }
 
+  console.log(informationUser);
+  
+
   return (
     <div className="App">
-      <UserProvider >
         <Router>
           <Routes>
             <Route path="/" element={<PageConnexion />} />
@@ -24,7 +27,6 @@ function App(): JSX.Element {
             />
           </Routes>
         </Router>
-      </UserProvider >
     </div>
   );
 }

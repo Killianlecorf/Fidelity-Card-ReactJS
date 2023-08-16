@@ -1,52 +1,53 @@
-import React, { createContext, useContext, FC, useEffect, useState, ReactNode } from 'react';
+import React, { createContext, FC, useState, ReactNode, useContext } from 'react';
 import fetchApi from '../Utils/request';
 
-// Définir le type pour les informations de l'utilisateur
 interface User {
   id: string;
   name: string;
   email: string;
 }
 
-// Définir le type pour les valeurs du contexte
 interface UserContextValues {
   informationUser: User | null;
+  error: string | null;
 }
 
-// Créer un contexte pour les informations de l'utilisateur
-const UserContext = createContext<UserContextValues>({
+export const UserContext = createContext<UserContextValues>({
   informationUser: null,
+  error: null,
 });
 
-// Composant fournisseur (wrapper) pour le contexte d'informations utilisateur
 export const UserProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [informationUser, setInformationUser] = useState<User | null>(null);
+  const [fetchError, setFetchError] = useState<string | null>(null);
 
   const fetchUserInfo = async () => {
     try {
-      const response = await fetchApi('/user/getUser', 'GET'); 
+      const response = await fetchApi('/user/getUser', 'GET');
+      console.log(response.data);
       setInformationUser(response.data);
     } catch (error) {
-      console.error('Erreur de connexion', error);
+      if (error instanceof Error) {
+        const errorMessage = error.toString();
+        setFetchError(errorMessage);
+        console.error('Erreur de connexion', errorMessage);
+      } else {
+        const errorMessage = 'Une erreur inconnue s\'est produite';
+        setFetchError(errorMessage);
+        console.error('Erreur de connexion', errorMessage);
+      }
     }
   };
 
-  console.log(informationUser);
-  
+  fetchUserInfo();
 
-  useEffect(() => {
-    fetchUserInfo();
-  }, []);
-
-  // Fournir le contexte et ses valeurs à tous les composants enfants
   return (
-    <UserContext.Provider value={{ informationUser }}>
+    <UserContext.Provider value={{ informationUser, error: fetchError }}>
       {children}
     </UserContext.Provider>
   );
 };
 
-// Hook personnalisé pour accéder au contexte des informations utilisateur
 export const useAuthContext = () => {
   return useContext(UserContext);
 };
