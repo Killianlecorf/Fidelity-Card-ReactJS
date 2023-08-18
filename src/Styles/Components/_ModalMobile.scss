@@ -1,58 +1,47 @@
 .modal-mobile {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: var(--main-color);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: visibility 0s, opacity 1s, transform 1s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform 2s ease-in-out;
 
-    li{
-      width: 90%;
+    li {
+        width: 90%;
 
-      button{
-          width: 100%;
-          height: 10vh;
-          background-color: var(--secondary-color);
-          border: 1px solid blue;
-          margin-top: 15px;
-          cursor: pointer;
-          color: var(--white-color);
-          font-family: var(--bold-font);
-      }
+        button {
+        width: 100%;
+        height: 10vh;
+        background-color: var(--secondary-color);
+        border: none;
+        margin-top: 15px;
+        cursor: pointer;
+        color: var(--white-color);
+        font-family: var(--bold-font);
 
-      button:hover{
-          width: 100%;
-          height: 10vh;
-          background-color: var(--white-color);
-          border: 1px solid var(--main-color);
-          color: var(--main-color);
-          font-family: var(--bold-font);
-          box-shadow: 1px 1px 10px var(--black-color);
-      }
-  }
-  }
-  
-  /* Animation d'ouverture du modal */
-  .modal-mobile-open {
-    visibility: visible;
-    opacity: 1;
+        &:hover {
+            width: 100%;
+            height: 10vh;
+            background-color: var(--white-color);
+            border: 1px solid var(--main-color);
+            color: var(--main-color);
+            font-family: var(--bold-font);
+            box-shadow: 1px 1px 10px var(--black-color);
+        }
+        }
+    }
+
+  &.modal-mobile-open {
     transform: translateY(0);
-    transition: visibility 0s, opacity 1s, transform 1s;
+    transition:  transform 2s cubic-bezier(0.15, 0.21, 0.63, 1.55);
   }
-  
-  /* Animation de fermeture du modal */
-  .modal-mobile-close {
-    visibility: hidden;
-    opacity: 0;
+
+  &.modal-mobile-close {
     transform: translateY(-100%);
-    transition: visibility 0s, opacity 1s, transform 1s;
+    transition:  transform 2s cubic-bezier(0.15, 0.21, 0.63, 1.55);
   }
+}

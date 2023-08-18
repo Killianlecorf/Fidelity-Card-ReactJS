@@ -5,12 +5,10 @@ interface modalMobileProps {
     setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ModalMobile :React.FC<modalMobileProps> = ({isOpenModal, setIsOpenModal}) => {
+const ModalMobile: React.FC<modalMobileProps> = ({ isOpenModal, setIsOpenModal }) => {
 
     const closeModal = () => {
-        if (isOpenModal === false) {
-            setIsOpenModal(true)
-        }
+        setIsOpenModal(false); // Ferme le modal en mettant isOpenModal à false
     }
 
     return (

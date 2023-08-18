@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import PageConnexion from "./Pages/PageConnexion/PageConnexion";
 import HomePage from "./Pages/HomePage/HomePage";
 import useAuth from "./Hooks/useAuth";
-// import useAuthContext from './Hooks/useAuthContext';
+import {AuthContext} from "./Hooks/useAuthContext";
+import SettingsPage from './Pages/SettingsPage';
 
 function App(): JSX.Element {
   const [isAuthenticated, isLoading] = useAuth();
-
-  // useAuthContext()
+  const { informationUser } = useContext(AuthContext);
 
   if (isLoading) {
     return <p>Loading...</p>;
   }
+
+  console.log(informationUser);
+  
 
   return (
     <div className="App">
@@ -22,6 +25,10 @@ function App(): JSX.Element {
             <Route
               path="/home"
               element={isAuthenticated ? <HomePage /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/settings"
+              element={isAuthenticated ? <SettingsPage /> : <Navigate to="/" />}
             />
           </Routes>
         </Router>
