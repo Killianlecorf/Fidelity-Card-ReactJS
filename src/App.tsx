@@ -4,6 +4,7 @@ import PageConnexion from "./Pages/PageConnexion/PageConnexion";
 import HomePage from "./Pages/HomePage/HomePage";
 import useAuth from "./Hooks/useAuth";
 import {AuthContext} from "./Hooks/useAuthContext";
+import SettingsPage from './Pages/SettingsPage';
 
 function App(): JSX.Element {
   const [isAuthenticated, isLoading] = useAuth();
@@ -24,6 +25,10 @@ function App(): JSX.Element {
             <Route
               path="/home"
               element={isAuthenticated ? <HomePage /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/settings"
+              element={isAuthenticated ? <SettingsPage /> : <Navigate to="/" />}
             />
           </Routes>
         </Router>
