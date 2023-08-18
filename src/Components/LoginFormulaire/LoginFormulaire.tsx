@@ -19,13 +19,13 @@ const LoginFormulaire: React.FC = () => {
 
 
   const validationForm = async () => {
-    if (!informationUser.checkbox) {
-      setErrorMessage('Veuillez cocher la case de confirmation');
+    if (!informationUser.email  && !informationUser.password || !informationUser.email  || !informationUser.password) {
+      setErrorMessage('Veuillez remplir tous les champs');
       return;
     }
-
-    if (informationUser.email === "" && informationUser.password === '') {
-      setErrorMessage('Veuillez remplir tous les champs');
+    
+    if (!informationUser.checkbox) {
+      setErrorMessage('Veuillez cocher la case de confirmation');
       return;
     }
 
