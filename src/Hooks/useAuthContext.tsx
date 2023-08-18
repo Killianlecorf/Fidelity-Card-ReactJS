@@ -12,7 +12,7 @@ interface UserContextValues {
   error: string | null;
 }
 
-export const UserContext = createContext<UserContextValues>({
+export const AuthContext = createContext<UserContextValues>({
   informationUser: null,
   error: null,
 });
@@ -42,12 +42,12 @@ export const UserProvider: FC<{ children: ReactNode }> = ({ children }) => {
   fetchUserInfo();
 
   return (
-    <UserContext.Provider value={{ informationUser, error: fetchError }}>
+    <AuthContext.Provider value={{ informationUser, error: fetchError }}>
       {children}
-    </UserContext.Provider>
+    </AuthContext.Provider>
   );
 };
 
 export const useAuthContext = () => {
-  return useContext(UserContext);
+  return useContext(AuthContext);
 };
