@@ -1,4 +1,4 @@
-import React, { createContext, FC, useState, ReactNode, useContext } from 'react';
+import React, { createContext, FC, useState, ReactNode, useEffect } from 'react';
 import fetchApi from '../Utils/request';
 
 interface User {
@@ -7,24 +7,23 @@ interface User {
   email: string;
 }
 
-interface UserContextValues {
+interface AuthContextValues {
   informationUser: User | null;
   error: string | null;
 }
 
-export const AuthContext = createContext<UserContextValues>({
+export const AuthContext = createContext<AuthContextValues>({
   informationUser: null,
   error: null,
 });
 
-export const UserProvider: FC<{ children: ReactNode }> = ({ children }) => {
+export const AuthContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [informationUser, setInformationUser] = useState<User | null>(null);
   const [fetchError, setFetchError] = useState<string | null>(null);
 
   const fetchUserInfo = async () => {
     try {
       const response = await fetchApi('/user/getUser', 'GET');
-      console.log(response.data);
       setInformationUser(response.data);
     } catch (error) {
       if (error instanceof Error) {
@@ -39,15 +38,13 @@ export const UserProvider: FC<{ children: ReactNode }> = ({ children }) => {
     }
   };
 
-  fetchUserInfo();
+  useEffect(() => {
+    fetchUserInfo();
+  },[])
 
   return (
     <AuthContext.Provider value={{ informationUser, error: fetchError }}>
       {children}
     </AuthContext.Provider>
   );
-};
-
-export const useAuthContext = () => {
-  return useContext(AuthContext);
 };
