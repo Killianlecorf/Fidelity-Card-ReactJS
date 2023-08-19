@@ -1,9 +1,9 @@
-import React from 'react';
+import React , {useContext} from 'react';
 import logo from '../../Assets/img/logo-blanc.png';
 import { FaUserCircle, FaRegSun, FaPowerOff, FaBars} from "react-icons/fa";
 import fetchApi from '../../Utils/request'
 import UrlRedirection from '../../Utils/UrlRedirection'
-import { useAuthContext } from '../../Hooks/useAuthContext';
+import { AuthContext } from '../../Contexts/useAuthContext';
 import { NavLink } from 'react-router-dom';
 
 interface HeaderProps {
@@ -13,7 +13,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
 
-    const { informationUser } = useAuthContext();
+    const { informationUser } = useContext(AuthContext);
 
     console.log(informationUser);
     
