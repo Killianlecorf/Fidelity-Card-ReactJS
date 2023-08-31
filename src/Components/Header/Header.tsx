@@ -15,8 +15,7 @@ const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
 
     const { informationUser } = useContext(AuthContext);
 
-    console.log(informationUser);
-    
+    const mainColor  = informationUser?.theme?.mainColor || '#483CE8'
 
     const deleteCookie = async () => {
         await fetchApi('/user/deleteCookieUser', 'GET')
@@ -28,9 +27,10 @@ const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
             setIsOpenModal(!isOpenModal);
         }
     } 
+    
 
     return (
-        <div className='Header-content'>
+        <div className='Header-content' style={{ "backgroundColor": mainColor}}>
             <div className="modal-header">
                 <div onClick={openModal} className="modal-sand">
                     <FaBars className={!isOpenModal ? 'icon-active': 'icon-desactive'} />
