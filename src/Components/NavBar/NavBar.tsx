@@ -1,19 +1,25 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { AuthContext } from '../../Contexts/useAuthContext';
 
 const NavBar = () => {
+
+    const { informationUser } = useContext(AuthContext);
+
+    const secondaryColor  = informationUser?.theme?.secondaryColor || '#857df8'
+
     return (
-        <div className='navBar'>
+        <div className='navBar' style={{ "backgroundColor": secondaryColor}}>
             <li>
-                <button>Statistiques</button>
+                <button style={{ "backgroundColor": secondaryColor }}>Statistiques</button>
             </li>
             <li>
-                <button>Répértoire Client</button>
+                <button style={{ "backgroundColor": secondaryColor}}>Répértoire Client</button>
             </li>
             <li>
-                <button>Boutique</button>
+                <button style={{ "backgroundColor": secondaryColor}}>Boutique</button>
             </li>
             <li>
-                <button>Entreprise</button>
+                <button style={{ "backgroundColor": secondaryColor}}>Entreprise</button>
             </li>
         </div>
     );
