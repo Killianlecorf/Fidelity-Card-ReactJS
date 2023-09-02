@@ -1,21 +1,21 @@
-import React from 'react';
+import React , {useContext} from 'react';
 import logo from '../../Assets/img/logo-blanc.png';
 import { FaUserCircle, FaRegSun, FaPowerOff, FaBars} from "react-icons/fa";
 import fetchApi from '../../Utils/request'
 import UrlRedirection from '../../Utils/UrlRedirection'
-import { useAuthContext } from '../../Hooks/useAuthContext';
+import { AuthContext } from '../../Contexts/useAuthContext';
+import { NavLink } from 'react-router-dom';
 
 interface HeaderProps {
-    isOpenModal : boolean;
-    setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+    isOpenModal? : boolean;
+    setIsOpenModal?: React.Dispatch<React.SetStateAction<boolean>>;
   }
 
 const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
 
-    const { informationUser } = useAuthContext();
+    const { informationUser } = useContext(AuthContext);
 
-    console.log(informationUser);
-    
+    const mainColor  = informationUser?.theme?.mainColor || '#483CE8'
 
     const deleteCookie = async () => {
         await fetchApi('/user/deleteCookieUser', 'GET')
@@ -23,19 +23,24 @@ const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
     }
 
     const openModal = () => {
-        setIsOpenModal(!isOpenModal)
+        if (setIsOpenModal) {
+            setIsOpenModal(!isOpenModal);
+        }
     } 
+    
 
 
     return (
-        <div className='Header-content'>
+        <div className='Header-content' style={{ "backgroundColor": mainColor}}>
             <div className="modal-header">
                 <div onClick={openModal} className="modal-sand">
                     <FaBars className={!isOpenModal ? 'icon-active': 'icon-desactive'} />
                 </div>
             </div>
             <div className="logo-content">
-                <img src={logo} alt="logo" />
+                <NavLink to='/home' >
+                    <img src={logo} alt="logo" />
+                </NavLink>
             </div>
             <div className="entrprise-name">
                 <h1>Fidelity Card</h1>
@@ -43,7 +48,9 @@ const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
             <div className="profil-content">
                 <div className="profil-name">
                     <div className="params-header-content">
-                        <FaRegSun className='params-icon'/>
+                        <NavLink to='/settings'>
+                            <FaRegSun className='params-icon'/>
+                        </NavLink>
                         <FaPowerOff onClick={deleteCookie}  className='logout-Icon'/>
                     </div>
                     <div className="account-header-content">

@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import PageConnexion from "./Pages/PageConnexion/PageConnexion";
 import HomePage from "./Pages/HomePage/HomePage";
 import useAuth from "./Hooks/useAuth";
-import { UserProvider  } from './Hooks/useAuthContext';
+// import {AuthContext} from "./Contexts/useAuthContext";
+import SettingsPage from './Pages/SettingsPage';
 
 function App(): JSX.Element {
   const [isAuthenticated, isLoading] = useAuth();
@@ -11,10 +12,10 @@ function App(): JSX.Element {
   if (isLoading) {
     return <p>Loading...</p>;
   }
+  
 
   return (
     <div className="App">
-      <UserProvider >
         <Router>
           <Routes>
             <Route path="/" element={<PageConnexion />} />
@@ -22,9 +23,12 @@ function App(): JSX.Element {
               path="/home"
               element={isAuthenticated ? <HomePage /> : <Navigate to="/" />}
             />
+            <Route
+              path="/settings"
+              element={isAuthenticated ? <SettingsPage /> : <Navigate to="/" />}
+            />
           </Routes>
         </Router>
-      </UserProvider >
     </div>
   );
 }
