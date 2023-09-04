@@ -14,6 +14,7 @@
     --black-color : #141414 ;
     --white-color : rgb(255, 255, 255);
     --grey-color : #e4e4e4;
+    --back-color : rgb(233, 240, 239);
     --regular-font : poppins-regular, Verdana, Geneva, Tahoma, sans-serif;
     --bold-font : poppins-Bold, Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -21,6 +22,7 @@
 body{
     margin: 0 auto;
     color: var(--black-color);
+    background-color: var(--back-color);
 }
 
 input{
