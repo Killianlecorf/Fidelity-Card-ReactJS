@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import { AuthContext } from '../../Contexts/useAuthContext';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -19,7 +20,9 @@ const NavBar = () => {
                 <button style={{ "backgroundColor": secondaryColor}}>Boutique</button>
             </li>
             <li>
-                <button style={{ "backgroundColor": secondaryColor}}>Entreprise</button>
+                <NavLink to='/entreprise'>
+                    <button style={{ "backgroundColor": secondaryColor}}>Entreprise</button>
+                </NavLink>
             </li>
         </div>
     );

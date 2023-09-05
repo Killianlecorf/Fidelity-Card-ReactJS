@@ -8,6 +8,7 @@ interface User {
     mainColor: string | null;
     secondaryColor: string | null;
   };
+  entreprise: string[];
 }
 
 interface AuthContextValues {
