@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 interface modalMobileProps {
     isOpenModal : boolean;
@@ -23,7 +24,9 @@ const ModalMobile: React.FC<modalMobileProps> = ({ isOpenModal, setIsOpenModal }
                 <button>Boutique</button>
             </li>
             <li>
-                <button>Entreprise</button>
+                <NavLink to='/entreprise'>
+                    <button>Entreprise</button>
+                </NavLink>
             </li>
         </div>
     );
