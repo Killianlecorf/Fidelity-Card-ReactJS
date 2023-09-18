@@ -29,6 +29,7 @@ const Header: React.FC<HeaderProps> = ({isOpenModal, setIsOpenModal}) => {
     } 
     
 
+
     return (
         <div className='Header-content' style={{ "backgroundColor": mainColor}}>
             <div className="modal-header">
