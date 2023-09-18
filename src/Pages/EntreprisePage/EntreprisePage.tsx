@@ -69,9 +69,7 @@ interface EntrepriseData {
             </div>
           </div>
         </div>
-        <div className="separate-modal">
-            {openModal()}
-        </div>
+        {openModal()}
       </div>
     );
   };
