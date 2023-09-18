@@ -4,16 +4,21 @@ import NavBar from '../../Components/NavBar';
 import EntrepriseCard from '../../Components/entrepriseCard';
 import { AuthContext } from '../../Contexts/useAuthContext';
 import FetchApi from "../../Utils/request";
+import { NavLink } from 'react-router-dom';
+import { FaPlus } from "react-icons/fa6";
+import ModalMobile from '../../Components/ModalMobile';
 
 
 interface EntrepriseData {
     name: string;
     description: string;
   }
+
   
   const EntreprisePage: React.FC = () => {
     const { informationUser } = useContext(AuthContext);
     const [informationEntreprise, setInformationEntreprise] = useState<EntrepriseData[]>([]);
+    const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
   
     const entrepriseIds = informationUser?.entreprise || [];
   
@@ -34,17 +39,28 @@ interface EntrepriseData {
           setInformationEntreprise(entrepriseData);
         });
     }, [entrepriseIds]);
-  
-    console.log(informationEntreprise);
-  
+
+  const openModal = () => {
+    if (isOpenModal === true) {
+      return <ModalMobile isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
+    }
+    return
+  }
+
+
     return (
       <div>
-        <Header />
+        <Header isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
         <div className="displayDashboard">
           <NavBar />
           <div className="page">
             <div className="titlePageEntreprise">
               <h2>Vos Entreprises</h2>
+            </div>
+            <div className="buttonAddEntreprise">
+                <NavLink to='/addentreprise'>
+                    <button className='buttonAddEntreprise'><FaPlus style={{ marginRight: '15px'}}/> Ajouter une entreprise</button>
+                </NavLink>
             </div>
             <div className="informationPageEntreprise">
               {informationEntreprise.map((entreprise, index) => (
@@ -52,6 +68,9 @@ interface EntrepriseData {
               ))}
             </div>
           </div>
+        </div>
+        <div className="separate-modal">
+            {openModal()}
         </div>
       </div>
     );
