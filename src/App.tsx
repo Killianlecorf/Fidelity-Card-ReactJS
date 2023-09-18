@@ -6,6 +6,7 @@ import useAuth from "./Hooks/useAuth";
 // import {AuthContext} from "./Contexts/useAuthContext";
 import SettingsPage from './Pages/SettingsPage';
 import EntreprisePage from './Pages/EntreprisePage';
+import AddEntreprisePage from './Pages/AddEntreprisePage';
 
 function App(): JSX.Element {
   const [isAuthenticated, isLoading] = useAuth();
@@ -31,6 +32,10 @@ function App(): JSX.Element {
             <Route
               path="/entreprise"
               element={isAuthenticated ? <EntreprisePage />: <Navigate to="/entreprise" />}
+            />
+            <Route
+              path="/newentreprise"
+              element={isAuthenticated ? <AddEntreprisePage/>: <Navigate to="/entreprise" />}
             />
           </Routes>
         </Router>

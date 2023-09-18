@@ -58,7 +58,7 @@ interface EntrepriseData {
               <h2>Vos Entreprises</h2>
             </div>
             <div className="buttonAddEntreprise">
-                <NavLink to='/addentreprise'>
+                <NavLink to='/newentreprise'>
                     <button className='buttonAddEntreprise'><FaPlus style={{ marginRight: '15px'}}/> Ajouter une entreprise</button>
                 </NavLink>
             </div>
