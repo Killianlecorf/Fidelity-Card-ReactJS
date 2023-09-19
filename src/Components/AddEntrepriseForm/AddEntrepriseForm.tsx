@@ -22,10 +22,11 @@ const AddEntrepriseForm: React.FC  = () => {
     const validationForm = async () => {
 
         const entreprise = {
-        email: informationEntreprise.name,
-        password: informationEntreprise.description
+            name: informationEntreprise.name,
+            description: informationEntreprise.description
         };
-
+        console.log(entreprise);
+        
         let response = await fetchAPI(`/entreprise/${informationUser?._id}/create`, 'POST', entreprise);
         if (response.ok) {
         UrlRedirection('/entreprise');
