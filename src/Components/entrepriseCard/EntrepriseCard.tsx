@@ -19,4 +19,4 @@ const EntrepriseCard: React.FC<EntrepriseCardProps> = ({ name, description }) =>
     );
 };
 
-export default EntrepriseCard;
+export default EntrepriseCard; 
