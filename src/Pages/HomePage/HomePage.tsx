@@ -20,9 +20,7 @@ const HomePage: React.FC = () => {
         <div className="navbar-content">
           <NavBar />
         </div>
-        <div className="separate-modal">
-            {openModal()}
-        </div>
+        {openModal()}
     </div>
   );
 };
