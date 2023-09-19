@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import PageConnexion from "./Pages/PageConnexion/PageConnexion";
 import HomePage from "./Pages/HomePage/HomePage";
 import useAuth from "./Hooks/useAuth";
-// import {AuthContext} from "./Contexts/useAuthContext";
 import SettingsPage from './Pages/SettingsPage';
 import EntreprisePage from './Pages/EntreprisePage';
 import AddEntreprisePage from './Pages/AddEntreprisePage';
