@@ -7,7 +7,7 @@ const AccueilEntreprise = () => {
     return (
         <div>
             <Header/>
-            <div className="flexAccueilEntreprisePanel">
+            <div className="displayDashboard">
                 <NavBar />
                 <AccueilEntreprisePanel />
             </div>
