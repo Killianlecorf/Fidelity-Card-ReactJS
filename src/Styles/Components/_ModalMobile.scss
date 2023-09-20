@@ -6,7 +6,6 @@
   z-index: 999;
 
   .modal-mobile {
-    position: fixed;
     width: 100%;
     height: 100%;
     background-color: var(--secondary-color);
@@ -14,8 +13,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateY(-100%);
-    transition: transform 2s ease-in-out;
 
       li {
           width: 90%;
@@ -41,18 +38,16 @@
           }
           }
       }
-
-    &.modal-mobile-open {
-      transform: translateY(0);
-      transition:  transform 2s cubic-bezier(0.15, 0.21, 0.63, 1.55);
-    }
-
-    &.modal-mobile-close {
-      transform: translateY(-100%);
-      transition:  transform 2s cubic-bezier(0.15, 0.21, 0.63, 1.55);
-    }
+  }
+  &.modal-mobile-open {
+    transform: translateY(0);
+    transition:  transform 2s ease // cubic-bezier(0.15, 0.21, 0.63, 1.55);
   }
 
+  &.modal-mobile-close {
+    transform: translateY(-100%);
+    transition:  transform 2s ease // cubic-bezier(0.15, 0.21, 0.63, 1.55);
+  }
 }
 
 @media (max-width: 800px) {

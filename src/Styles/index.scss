@@ -7,6 +7,7 @@
 @import './Pages/SettingsPage';
 @import './Pages/EntreprisePage';
 @import './Pages/AddEntreprisePage';
+@import './Pages/AccueilEntreprise';
 
 // components
 
@@ -18,7 +19,9 @@
 @import './Components/EntrepriseCard';
 @import './Components/AddEntrepriseForm';
 @import './Components/PaginationNumber';
+@import './Components/AccueilEntreprisePanel';
 
 // UI Kit
 
 @import './Components/UI-Kit/BackPage';
+@import './Components/UI-Kit/FieldCard';

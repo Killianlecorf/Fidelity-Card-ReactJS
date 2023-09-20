@@ -13,8 +13,8 @@ const ModalMobile: React.FC<modalMobileProps> = ({ isOpenModal, setIsOpenModal }
     }
 
     return (
-        <div className="separate-modal">
-            <div className={`modal-mobile ${isOpenModal ? 'modal-mobile-open' : 'modal-mobile-close'}`} onClick={closeModal}>
+        <div className={`separate-modal ${isOpenModal ? 'modal-mobile-open' : 'modal-mobile-close'}`}>
+            <div className={`modal-mobile`} onClick={closeModal}>
                 <li>
                     <button>Statistique</button>
                 </li>
