@@ -15,8 +15,11 @@ const EntrepriseCard: React.FC<EntrepriseCardProps> = ({ name, description }) =>
                 <h2>{ name }</h2>
                 <p>{description}</p>
             </div>
+            <div className="fonctionnalityCard">
+
+            </div>
         </div>
     );
 };
 
-export default EntrepriseCard; 
+export default EntrepriseCard;  
