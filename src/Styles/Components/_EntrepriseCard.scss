@@ -42,6 +42,56 @@
     .fonctionnalityCard{
         width: 100%;
         height: 10%;
+        display: flex;
+
+        .deleteEntreprise{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg{
+                font-size: 25px;
+                margin-right: 15px;
+            }
+        }
+
+        .deleteEntreprise:hover{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red;
+            cursor: pointer;
+            color: var(--white-color);
+        }
+
+        .editEntreprise{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .2s ease;
+
+            svg{
+                font-size: 25px;
+                margin-right: 15px;
+            }
+        }
+
+        .editEntreprise:hover{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: orange;
+            cursor: pointer;
+            transition: .2s ease;
+        }
     }
 
 }
