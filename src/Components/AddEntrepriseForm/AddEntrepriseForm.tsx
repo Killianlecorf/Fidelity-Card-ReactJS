@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import fetchAPI from '../../Utils/request';
 import UrlRedirection from "../../Utils/UrlRedirection";
 import { AuthContext } from '../../Contexts/useAuthContext';
+import BackPage from '../UI-Kit/BackPage';
 
 interface InformationEntreprise {
     name: string;
@@ -25,7 +26,6 @@ const AddEntrepriseForm: React.FC  = () => {
             name: informationEntreprise.name,
             description: informationEntreprise.description
         };
-        console.log(entreprise);
         
         let response = await fetchAPI(`/entreprise/${informationUser?._id}/create`, 'POST', entreprise);
         if (response.ok) {
@@ -51,6 +51,7 @@ const AddEntrepriseForm: React.FC  = () => {
 
     return (
         <div className='AddEntrepriseForm'>
+            <BackPage urlRedirection='/entreprise'/>
             <div className="entrepriseForm">
                 <div className="titleFormEntreprise">
                     <h2>Création d'entreprise</h2>
