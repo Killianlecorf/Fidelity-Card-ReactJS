@@ -1,9 +1,9 @@
 .displayDashboard{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: flex-start;
     width: 100%;
-
+    
     .page{
         width: 83%;
         display: flex;
