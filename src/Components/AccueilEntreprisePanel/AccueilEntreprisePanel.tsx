@@ -14,9 +14,9 @@ const AccueilEntreprisePanel = () => {
             </div>
             <BackPage urlRedirection='/entreprise' />
             <div className="ChoisePanelContent">
-                <FieldCard icon={<HiOutlineUserGroup/>} title='Base de donnée client' />
-                <FieldCard icon={<BsShop/>} title='Vos Boutiques' />
-                <FieldCard icon={<FiSettings/>} title="Option de l'entreprise" />
+                <FieldCard icon={<HiOutlineUserGroup/>} title='Base de donnée client' url='/enterprise/client' />
+                <FieldCard icon={<BsShop/>} title='Vos Boutiques' url='/entreprise/boutique'/>
+                <FieldCard icon={<FiSettings/>} title="Option de l'entreprise" url='/entreprise/settings'/>
             </div>
             
         </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { FiEdit } from "react-icons/fi";
 
 interface EntrepriseCardProps {
     name: string;
@@ -19,7 +21,14 @@ const EntrepriseCard: React.FC<EntrepriseCardProps> = ({ name, description }) =>
                         </div>
                     </NavLink>    
                     <div className="fonctionnalityCard">
-
+                        <div className="deleteEntreprise">
+                            <RiDeleteBin6Line/>
+                            <p>Supprimer</p>
+                        </div>
+                        <div className="editEntreprise">
+                            <FiEdit />
+                            <p>Modifier</p>
+                        </div>
                     </div>
             </div>
     );
