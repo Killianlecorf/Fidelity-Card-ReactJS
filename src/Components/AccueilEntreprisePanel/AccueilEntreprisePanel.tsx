@@ -1,6 +1,6 @@
 import React from 'react';
 import BackPage from '../UI-Kit/BackPage';
-import FieldCard from '../UI-kit/FieldCard';
+import FieldCard from '../UI-Kit/FieldCard';
 import { HiOutlineUserGroup } from "react-icons/hi2";
 import { BsShop } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
