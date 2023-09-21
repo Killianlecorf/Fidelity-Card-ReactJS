@@ -1,6 +1,14 @@
 import React, { createContext, FC, useState, ReactNode, useEffect } from 'react';
 import fetchApi from '../Utils/request';
 
+
+interface EntrepriseInfo {
+  _id: string;
+  name: string;
+  description: string;
+}
+
+
 interface User {
   _id : string | null;
   name: string | null;
@@ -9,7 +17,7 @@ interface User {
     mainColor: string | null;
     secondaryColor: string | null;
   };
-  entreprise: string[];
+  entreprise: EntrepriseInfo[];
 }
 
 interface AuthContextValues {
