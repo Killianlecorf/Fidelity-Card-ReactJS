@@ -49,6 +49,8 @@ interface EntrepriseData {
         });
     }, [entrepriseIds]);
 
+    console.log(informationEntreprise);
+    
 
   return (
     <div>
