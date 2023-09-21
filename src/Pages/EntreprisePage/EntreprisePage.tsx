@@ -13,6 +13,7 @@ import PaginationNumber from '../../Components/PaginationNumber';
 interface EntrepriseData {
     name: string;
     description: string;
+    _id: string;
   }
 
   
@@ -54,7 +55,6 @@ interface EntrepriseData {
         
     }, [entrepriseIds]);
     
-    
 
   return (
     <div>
@@ -72,7 +72,7 @@ interface EntrepriseData {
           </div>
           <div className="informationPageEntreprise">
             {visibleEntreprises.map((entreprise, index) => (
-              <EntrepriseCard key={index} name={entreprise.name}  description={entreprise.description}/>
+              <EntrepriseCard key={index} name={entreprise.name}  description={entreprise.description} id={entreprise._id}/>
             ))}
           </div>
           <PaginationNumber currentPage={currentPage} totalPages={Math.ceil(informationEntreprise.length / itemsPerPage)} onPageChange={setCurrentPage}/>
