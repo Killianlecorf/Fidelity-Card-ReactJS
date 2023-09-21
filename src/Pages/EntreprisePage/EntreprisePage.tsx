@@ -49,13 +49,6 @@ interface EntrepriseData {
         });
     }, [entrepriseIds]);
 
-  const openModal = () => {
-    if (isOpenModal === true) {
-      return <ModalMobile isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
-    }
-    return
-  }
-
 
   return (
     <div>
@@ -79,7 +72,7 @@ interface EntrepriseData {
           <PaginationNumber currentPage={currentPage} totalPages={Math.ceil(informationEntreprise.length / itemsPerPage)} onPageChange={setCurrentPage}/>
         </div>
       </div>
-      {openModal()}
+      <ModalMobile isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
     </div>
   );
 }  

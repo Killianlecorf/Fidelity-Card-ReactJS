@@ -1,0 +1,58 @@
+.backEntreprisePageContent{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+        
+    .backEntreprisePage{
+        width: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        margin-left: 5%;
+
+
+        a{
+            text-decoration: none;
+            color: var(--black-color);
+            width: 500px;
+            height: auto;
+            display: flex;
+            align-items: center;
+
+            .backChevronEntreprise{
+                width: 10%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                padding-right: 25px;
+    
+                svg{
+                    font-size: 35px;
+                }
+            }
+    
+            .backTitleEntreprise{
+                width: 90%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+    
+                p{
+                    font-size: 30px;
+                    width: 75%;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 800px) {
+    .backEntreprisePageContent{
+        display: none;
+    }
+}
