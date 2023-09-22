@@ -9,7 +9,7 @@ interface modalMobileProps {
 const ModalMobile: React.FC<modalMobileProps> = ({ isOpenModal, setIsOpenModal }) => {
 
     const closeModal = () => {
-        setIsOpenModal(false); // Ferme le modal en mettant isOpenModal à false
+        setIsOpenModal(false);
     }
 
     return (
