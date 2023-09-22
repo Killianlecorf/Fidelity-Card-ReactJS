@@ -1,9 +1,9 @@
 .displayDashboard{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: flex-start;
     width: 100%;
-
+    
     .page{
         width: 83%;
         display: flex;
@@ -29,7 +29,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-
+            
             a{
                 width: auto;
                 height: auto;
@@ -47,7 +47,7 @@
                     border: 2px solid var(--main-color);
                     font-size: 20px;
                     padding: 15px 15px 15px 15px ;
-                    
+                    transition: .2s ease;
                 }
 
                 button:hover{
@@ -60,6 +60,7 @@
                     cursor: pointer;
                     font-size: 20px;
                     padding: 15px 15px 15px 15px ;
+                    transition: .2s ease;
                 }
             }
         }

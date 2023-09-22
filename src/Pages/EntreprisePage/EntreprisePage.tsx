@@ -13,6 +13,7 @@ import PaginationNumber from '../../Components/PaginationNumber';
 interface EntrepriseData {
     name: string;
     description: string;
+    _id: string;
   }
 
   
@@ -30,6 +31,7 @@ interface EntrepriseData {
     const visibleEntreprises = informationEntreprise.slice(startIndex, endIndex);
   
     const entrepriseIds = informationUser?.entreprise || [];
+    
   
     useEffect(() => {
       const fetchEntrepriseData = async (entrepriseId: string) => {
@@ -41,14 +43,18 @@ interface EntrepriseData {
           return null;
         }
       };
-  
-      Promise.all(entrepriseIds.map((entrepriseId: string) => fetchEntrepriseData(entrepriseId)))
+    
+      // Utilisez map pour extraire les _id de chaque entreprise
+      const entrepriseIdsToFetch = entrepriseIds.map((entreprise) => entreprise._id);
+    
+      Promise.all(entrepriseIdsToFetch.map((entrepriseId: string) => fetchEntrepriseData(entrepriseId)))
         .then((responses) => {
           const entrepriseData = responses.filter((response) => response !== null) as EntrepriseData[];
           setInformationEntreprise(entrepriseData);
         });
+        
     }, [entrepriseIds]);
-
+    
 
   return (
     <div>
@@ -66,7 +72,7 @@ interface EntrepriseData {
           </div>
           <div className="informationPageEntreprise">
             {visibleEntreprises.map((entreprise, index) => (
-              <EntrepriseCard key={index} name={entreprise.name}  description={entreprise.description}/>
+              <EntrepriseCard key={index} name={entreprise.name}  description={entreprise.description} id={entreprise._id}/>
             ))}
           </div>
           <PaginationNumber currentPage={currentPage} totalPages={Math.ceil(informationEntreprise.length / itemsPerPage)} onPageChange={setCurrentPage}/>
