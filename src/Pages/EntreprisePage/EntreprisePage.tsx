@@ -54,6 +54,7 @@ interface EntrepriseData {
         });
         
     }, [entrepriseIds]);
+
     
 
   return (
@@ -72,7 +73,7 @@ interface EntrepriseData {
           </div>
           <div className="informationPageEntreprise">
             {visibleEntreprises.map((entreprise, index) => (
-              <EntrepriseCard key={index} name={entreprise.name}  description={entreprise.description} id={entreprise._id}/>
+              <EntrepriseCard key={index} name={entreprise.name}  description={entreprise.description} id={entreprise._id} />
             ))}
           </div>
           <PaginationNumber currentPage={currentPage} totalPages={Math.ceil(informationEntreprise.length / itemsPerPage)} onPageChange={setCurrentPage}/>

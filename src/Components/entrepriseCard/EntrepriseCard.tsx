@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink } from 'react-router-dom';
 // import {  useNavigate } from 'react-router-dom';
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FiEdit } from "react-icons/fi";
 import FetchApi from "../../Utils/request";
 import redirectToPage from "../../Utils/UrlRedirection";
+import ConfirmationModal from '../ConfirmationModal';
 
 interface EntrepriseCardProps {
     name: string;
@@ -13,6 +14,8 @@ interface EntrepriseCardProps {
 }
 
 const EntrepriseCard: React.FC<EntrepriseCardProps> = ({ name, description, id }) => {
+
+    const [isOpenConfirmationModal, setIsOpenConfirmationModal] = useState<boolean>(false)
 
     // const navigate = useNavigate()
 
@@ -27,6 +30,17 @@ const EntrepriseCard: React.FC<EntrepriseCardProps> = ({ name, description, id }
         
     }  
 
+    const verificationOpenConfirmationModal = () => {
+        if (isOpenConfirmationModal) {
+          return <ConfirmationModal isOpen={isOpenConfirmationModal} setIsOpen={setIsOpenConfirmationModal} onConfirm={deleteEntreprise}/>
+        } else {
+          return null; 
+        }
+      }
+
+    const openModalConfirmation = () => {
+        setIsOpenConfirmationModal(!isOpenConfirmationModal)
+    }
 
     return (
             <div className='EntrepriseCard'>
@@ -40,15 +54,16 @@ const EntrepriseCard: React.FC<EntrepriseCardProps> = ({ name, description, id }
                         </div>
                     </NavLink>    
                     <div className="fonctionnalityCard">
-                        <div onClick={deleteEntreprise} className="deleteEntreprise">
+                        <div onClick={openModalConfirmation} className="deleteEntreprise">
                             <RiDeleteBin6Line/>
                             <p>Supprimer</p>
                         </div>
-                        <div className="editEntreprise">
+                        <div onClick={openModalConfirmation} className="editEntreprise">
                             <FiEdit />
                             <p>Modifier</p>
                         </div>
                     </div>
+                    {verificationOpenConfirmationModal()}
             </div>
     );
 };
