@@ -14,7 +14,7 @@ const ConfirmationModal: React.FC<IConfirmationModalProps> = ({isOpen, setIsOpen
     }
 
     return (
-        <>
+        <div>
             <div className="ConfirmationModal">
                 <div className="closeModalContent">
                     <AiOutlineClose />
@@ -31,7 +31,7 @@ const ConfirmationModal: React.FC<IConfirmationModalProps> = ({isOpen, setIsOpen
             </div>
             <div onClick={closeConfirmationModal} className='backScreenConfirmationModal'>
             </div>
-        </>
+        </div>
     );
 };
 

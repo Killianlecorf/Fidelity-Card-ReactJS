@@ -5,9 +5,10 @@
     height: 500px; 
     background-color: var(--white-color);
     position: fixed;
-    top: 20vh;
-    left: 17vw;
+    top: 33vh;
+    left: 40vw;
     z-index: 500;
+
 
     .closeModalContent{
         width: 100%;
@@ -40,31 +41,10 @@
 
 .backScreenConfirmationModal{
     position: fixed;
-    width: 83vw;
-    height: 80vh;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.456);
-    top: 20vh;
-    left: 17vw;
+    top: 0;
+    left: 0;
     cursor: pointer;
-}
-
-@media (max-width: 800px) {
-
-    .backScreenConfirmationModal{
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.456);
-        top: 0;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
-        .ConfirmationModal{
-            width: 85%;
-            height: 35%;
-            background-color: var(--white-color);
-        }
-    }
 }
