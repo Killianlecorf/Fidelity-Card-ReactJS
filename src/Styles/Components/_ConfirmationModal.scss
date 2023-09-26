@@ -1,0 +1,70 @@
+
+
+.ConfirmationModal{
+    width: 750px;
+    height: 500px; 
+    background-color: var(--white-color);
+    position: fixed;
+    top: 20vh;
+    left: 17vw;
+    z-index: 500;
+
+    .closeModalContent{
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 25px;
+    }
+
+    .titleModaleConfirmationContent{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .textConfirmationContent{
+        width: 100%;
+        height: 30%;
+    }
+
+    .confirmationModalButton{
+        width: 100%;
+        height: 40%;
+    }
+}
+
+
+.backScreenConfirmationModal{
+    position: fixed;
+    width: 83vw;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.456);
+    top: 20vh;
+    left: 17vw;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+
+    .backScreenConfirmationModal{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.456);
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .ConfirmationModal{
+            width: 85%;
+            height: 35%;
+            background-color: var(--white-color);
+        }
+    }
+}
