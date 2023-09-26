@@ -17,11 +17,18 @@
         .closeModalContent{
             width: 100%;
             height: 10%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: red;
         }
 
         .titleModaleConfirmationContent{
             width: 100%;
             height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .textConfirmationContent{

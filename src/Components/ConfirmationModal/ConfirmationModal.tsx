@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineClose } from "react-icons/ai";
 
 interface IConfirmationModalProps {
     isOpen: boolean;
@@ -16,10 +17,10 @@ const ConfirmationModal: React.FC<IConfirmationModalProps> = ({isOpen, setIsOpen
         <div onClick={closeConfirmationModal} className='backScreenConfirmationModal'>
             <div className="ConfirmationModal">
                 <div className="closeModalContent">
-
+                    <AiOutlineClose />
                 </div>
                 <div className="titleModaleConfirmationContent">
-
+                    <h2>Veuillez confirmer</h2>
                 </div>
                 <div className="textConfirmationContent">
                     <button onClick={onConfirm}>Confirmer</button>
