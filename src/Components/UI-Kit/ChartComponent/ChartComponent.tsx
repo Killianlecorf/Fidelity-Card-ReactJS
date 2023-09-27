@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import Chart, { ChartType } from 'chart.js/auto'; 
-
+import Chart, {ChartType} from 'chart.js/auto';
 
 type ValidChartType = ChartType;
 
@@ -14,6 +13,14 @@ interface ChartProps {
 const ChartComponent: React.FC<ChartProps> = ({ data, labels, graphique, colors }) => {
   const chartRef = useRef<HTMLCanvasElement | null>(null);
   const chartInstance = useRef<Chart | null>(null);
+  
+  const isDisplaybar = () => {
+    if (graphique === "pie" ) {
+      return false
+    }else{
+      return true
+    }
+  }
 
   useEffect(() => {
     if (chartRef.current) {
@@ -30,7 +37,7 @@ const ChartComponent: React.FC<ChartProps> = ({ data, labels, graphique, colors 
             labels: labels,
             datasets: [
               {
-                label: 'Data',
+                label: 'Données',
                 data: data,
                 backgroundColor: colors,
                 borderColor: colors,
@@ -40,15 +47,18 @@ const ChartComponent: React.FC<ChartProps> = ({ data, labels, graphique, colors 
           },
           options: {
             scales: {
+              x: {
+                display: isDisplaybar(),
+              },
               y: {
-                beginAtZero: true,
+                display: isDisplaybar(),
               },
             },
           },
         });
       }
     }
-  }, [data, labels, graphique]);
+  }, [data, labels, colors, graphique]);
 
   return (
     <div>
