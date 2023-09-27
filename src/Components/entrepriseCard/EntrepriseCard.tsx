@@ -32,7 +32,7 @@ const EntrepriseCard: React.FC<EntrepriseCardProps> = ({ name, description, id }
 
     const verificationOpenConfirmationModal = () => {
         if (isOpenConfirmationModal) {
-          return <ConfirmationModal isOpen={isOpenConfirmationModal} setIsOpen={setIsOpenConfirmationModal} onConfirm={deleteEntreprise}/>
+          return <ConfirmationModal isOpen={isOpenConfirmationModal} setIsOpen={setIsOpenConfirmationModal} onConfirm={deleteEntreprise} confimationtext="supprimer l'entreprise"/>
         } else {
           return null; 
         }
