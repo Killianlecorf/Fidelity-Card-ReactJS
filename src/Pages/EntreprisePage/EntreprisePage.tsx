@@ -31,7 +31,7 @@ interface EntrepriseData {
     const visibleEntreprises = informationEntreprise.slice(startIndex, endIndex);
   
     const entrepriseIds = informationUser?.entreprise || [];
-    
+     
   
     useEffect(() => {
       const fetchEntrepriseData = async (entrepriseId: string) => {

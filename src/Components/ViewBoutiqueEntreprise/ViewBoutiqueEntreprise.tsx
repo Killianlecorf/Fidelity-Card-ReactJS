@@ -4,6 +4,7 @@ import fecthApi from '../../Utils/request'
 import FieldCard from '../UI-Kit/FieldCard';
 import { BsShop } from "react-icons/bs";
 import BackPage from '../UI-Kit/BackPage';
+import PaginationNumber from '../PaginationNumber';
 
 interface RouteParamsEntrepriseId extends Record<string, string | undefined>{
     entrepriseId: string;
@@ -19,6 +20,13 @@ const ViewBoutiqueEntreprise = () => {
 
     const {entrepriseId} = useParams<RouteParamsEntrepriseId>()
     const [boutique, setBoutique] = useState<BoutiqueItem[]>([])
+    const [currentPage, setCurrentPage] = useState<number>(1);
+
+    const itemsPerPage = 3;
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    const visibleEntreprises = boutique.slice(startIndex, endIndex);
 
     const fetchBoutique = async () => {
         try {
@@ -44,11 +52,12 @@ const ViewBoutiqueEntreprise = () => {
             <BackPage urlRedirection={`/entreprise/accueil/${entrepriseId}`}/>
             <div className="boutiqueContent">
                 {
-                    boutique?.map((boutiqueItem: BoutiqueItem) =>{
+                    visibleEntreprises?.map((boutiqueItem: BoutiqueItem) =>{
                         return <FieldCard key={boutiqueItem._id} icon={<BsShop/>} title={boutiqueItem.name} url='/entreprise/boutique/info'/>
                     })
                 }
             </div>
+            <PaginationNumber currentPage={currentPage} totalPages={Math.ceil(boutique.length / itemsPerPage)} onPageChange={setCurrentPage}/>
         </div>
     );
 };
