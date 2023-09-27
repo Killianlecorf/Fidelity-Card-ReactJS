@@ -44,7 +44,7 @@ const EntrepriseCard: React.FC<EntrepriseCardProps> = ({ name, description, id }
 
     return (
             <div className='EntrepriseCard'>
-                    <NavLink to='/entreprise/accueil'>
+                    <NavLink to={`/entreprise/accueil/${id}`}>
                         <div className="imageContent">
                             <img src="https://businesspress.net/wp-content/uploads/2020/05/son-entreprise.jpg" />
                         </div>

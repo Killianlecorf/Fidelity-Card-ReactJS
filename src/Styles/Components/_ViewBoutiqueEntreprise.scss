@@ -1,0 +1,37 @@
+.ViewBoutiqueEntreprise{
+    width: 83vw;
+    height: 80vh;
+
+    .titleBoutiquePage{
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .boutiqueContent{
+        width: 100%;
+        height: 80%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .ViewBoutiqueEntreprise{
+        width: 100%;
+        height: 80%;
+    
+        .boutiqueContent{
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+
+}

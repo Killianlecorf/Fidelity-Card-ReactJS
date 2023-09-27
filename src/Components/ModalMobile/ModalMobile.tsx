@@ -16,13 +16,13 @@ const ModalMobile: React.FC<modalMobileProps> = ({ isOpenModal, setIsOpenModal }
         <div className={`separate-modal ${isOpenModal ? 'modal-mobile-open' : 'modal-mobile-close'}`}>
             <div className={`modal-mobile`} onClick={closeModal}>
                 <li>
-                    <button>Statistique</button>
+                    <button>Accueil</button>
+                </li>
+                <li>
+                    <button>Statistiques</button>
                 </li>
                 <li>
                     <button>Répértoire Clients</button>
-                </li>
-                <li>
-                    <button>Boutique</button>
                 </li>
                 <li>
                     <NavLink to='/entreprise'>
