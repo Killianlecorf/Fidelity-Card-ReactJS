@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import BackPage from '../UI-Kit/BackPage';
 import FieldCard from '../UI-Kit/FieldCard';
 import { HiOutlineUserGroup } from "react-icons/hi2";
@@ -13,16 +13,6 @@ interface RouteParamsEntrepriseId extends Record<string, string | undefined>{
 const AccueilEntreprisePanel = () => {
 
     const {entrepriseId} = useParams<RouteParamsEntrepriseId>()
-    const [getEntrepriseId, setGetEntrepriseId] = useState<string>('')
-
-
-    useEffect(() => {
-        if (entrepriseId !== undefined) {
-            setGetEntrepriseId(entrepriseId);
-        }
-    }, [entrepriseId]);
-
-    console.log(getEntrepriseId);
     
 
     return (
@@ -33,7 +23,7 @@ const AccueilEntreprisePanel = () => {
             <BackPage urlRedirection='/entreprise' />
             <div className="ChoisePanelContent">
                 <FieldCard icon={<HiOutlineUserGroup/>} title='Base de donnée client' url='/enterprise/client' />
-                <FieldCard icon={<BsShop/>} title='Vos Boutiques' url='/entreprise/boutique'/>
+                <FieldCard icon={<BsShop/>} title='Vos Boutiques' url={`/entreprise/${entrepriseId}/boutique`}/>
                 <FieldCard icon={<FiSettings/>} title="Option de l'entreprise" url='/entreprise/settings'/>
             </div>
         </div>
