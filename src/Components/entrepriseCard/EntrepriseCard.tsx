@@ -32,7 +32,7 @@ const EntrepriseCard: React.FC<EntrepriseCardProps> = ({ name, description, id }
 
     const verificationOpenConfirmationModal = () => {
         if (isOpenConfirmationModal) {
-          return <ConfirmationModal isOpen={isOpenConfirmationModal} setIsOpen={setIsOpenConfirmationModal} onConfirm={deleteEntreprise}/>
+          return <ConfirmationModal isOpen={isOpenConfirmationModal} setIsOpen={setIsOpenConfirmationModal} onConfirm={deleteEntreprise} confimationtext="supprimer l'entreprise"/>
         } else {
           return null; 
         }
@@ -44,7 +44,7 @@ const EntrepriseCard: React.FC<EntrepriseCardProps> = ({ name, description, id }
 
     return (
             <div className='EntrepriseCard'>
-                    <NavLink to='/entreprise/accueil'>
+                    <NavLink to={`/entreprise/accueil/${id}`}>
                         <div className="imageContent">
                             <img src="https://businesspress.net/wp-content/uploads/2020/05/son-entreprise.jpg" />
                         </div>

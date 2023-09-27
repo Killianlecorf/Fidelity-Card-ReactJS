@@ -49,7 +49,6 @@ export const AuthContextProvider: FC<{ children: ReactNode }> = ({ children }) =
   const fetchUserInfo = async () => {
     try {
       const response = await fetchApi(`/user/${tokenUser}`, 'GET');
-      console.log(response.data);
       setInformationUser(response.data);
     } catch (error) {
       handleError(error);
