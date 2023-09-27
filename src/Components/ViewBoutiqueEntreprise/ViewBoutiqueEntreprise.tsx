@@ -22,7 +22,7 @@ const ViewBoutiqueEntreprise = () => {
     const [boutique, setBoutique] = useState<BoutiqueItem[]>([])
     const [currentPage, setCurrentPage] = useState<number>(1);
 
-    const itemsPerPage = 3;
+    const itemsPerPage = 2;
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
@@ -41,7 +41,7 @@ const ViewBoutiqueEntreprise = () => {
 
     useEffect(()=>{
         fetchBoutique()
-    },[entrepriseId])
+    },[entrepriseId]) 
 
 
     return (
