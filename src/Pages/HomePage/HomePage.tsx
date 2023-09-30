@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../../Components/Header';
 import ModalMobile from '../../Components/ModalMobile';
 import NavBar from '../../Components/NavBar';
+import StatHome from '../../Components/StatHome';
 
 const HomePage: React.FC = () => {
 
@@ -19,6 +20,7 @@ const HomePage: React.FC = () => {
         <Header isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
         <div className="navbar-content">
           <NavBar />
+          <StatHome />
         </div>
         {openModal()}
     </div>
