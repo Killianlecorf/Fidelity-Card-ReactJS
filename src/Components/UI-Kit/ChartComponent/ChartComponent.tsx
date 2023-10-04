@@ -8,9 +8,10 @@ interface ChartProps {
   labels: string[];
   graphique: ValidChartType;
   colors: string[];
+  borderColor: string;
 }
 
-const ChartComponent: React.FC<ChartProps> = ({ data, labels, graphique, colors }) => {
+const ChartComponent: React.FC<ChartProps> = ({ data, labels, graphique, colors, borderColor }) => {
   const chartRef = useRef<HTMLCanvasElement | null>(null);
   const chartInstance = useRef<Chart | null>(null);
   
@@ -40,7 +41,7 @@ const ChartComponent: React.FC<ChartProps> = ({ data, labels, graphique, colors 
                 label: 'Données',
                 data: data,
                 backgroundColor: colors,
-                borderColor: colors,
+                borderColor: borderColor,
                 borderWidth: 1,
               },
             ],

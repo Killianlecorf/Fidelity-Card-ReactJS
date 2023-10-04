@@ -1,0 +1,286 @@
+.EditEntrepriseModalContent{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20vh;
+    left: 0;
+
+    .editEntrepriseModal{
+        width: 50vw;
+        height:75vh;
+        background-color: var(--white-color);
+        z-index: 500;
+
+        .closeModal{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            svg{
+                font-size: 35px;
+                margin-right: 25px;
+                cursor: pointer;
+            }
+        }
+
+        .titleEditModal{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .editEntrepriseForm{
+            width: 100%;
+            height: 60%;
+
+            .inputNameContent{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 30%;
+
+                div{
+                    width: 75%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: end;
+
+
+                    input{
+                        margin-top: 25px;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                    }
+                }
+            }
+
+            .textAreaDescContent{
+                width: 100%;
+                height: 70%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                div{
+                    width: 75%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    label{
+                        margin-top: 25px;
+                    }
+
+                    textarea{
+                        padding-left: 15px;
+                        padding-top: 10px;
+                        border-radius: 10px;
+                        border: 1px solid var(--black-color);
+                        width: 97%;
+                        height: 50%;
+                        resize: none;
+                        margin-top: 25px;
+                    }
+                }
+            }   
+        }
+
+        .editButton{
+            width: 100%;
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button{
+                height: 75%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--white-color);
+                background-color: var(--main-color);
+                border: 2px solid var(--main-color);
+                font-size: 20px;
+                padding: 15px 15px 15px 15px ;
+                transition: .2s ease;
+            }
+
+            button:hover{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--main-color);
+                background-color: var(--white-color);
+                border: 2px solid var(--main-color);
+                cursor: pointer;
+                font-size: 20px;
+                padding: 15px 15px 15px 15px ;
+                transition: .2s ease;
+            }
+        }
+    }
+
+    .editEntrepriseModalBack{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.456);
+        top: 0;
+        left: 0;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 850px) {
+    .EditEntrepriseModalContent{
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 20vh;
+        left: 0;
+    
+        .editEntrepriseModal{
+            width: 100vw;
+            height:80vh;
+            background-color: var(--white-color);
+            z-index: 500;
+    
+            .closeModal{
+                width: 100%;
+                height: 10%;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+    
+                svg{
+                    font-size: 35px;
+                    margin-right: 25px;
+                    cursor: pointer;
+                }
+            }
+    
+            .titleEditModal{
+                width: 100%;
+                height: 10%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .editEntrepriseForm{
+                width: 100%;
+                height: 60%;
+    
+                .inputNameContent{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 30%;
+    
+                    div{
+                        width: 75%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: end;
+    
+    
+                        input{
+                            margin-top: 25px;
+                            padding-left: 15px;
+                        }
+                    }
+                }
+    
+                .textAreaDescContent{
+                    width: 100%;
+                    height: 70%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                    div{
+                        width: 75%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+    
+                        label{
+                            margin-top: 25px;
+                        }
+    
+                        textarea{
+                            padding-left: 15px;
+                            padding-top: 10px;
+                            border-radius: 10px;
+                            border: 1px solid var(--black-color);
+                            width: 97%;
+                            height: 50%;
+                            resize: none;
+                            margin-top: 25px;
+                        }
+                    }
+                }   
+            }
+    
+            .editButton{
+                width: 100%;
+                height: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                button{
+                    height: 75%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--white-color);
+                    background-color: var(--main-color);
+                    border: 2px solid var(--main-color);
+                    font-size: 20px;
+                    padding: 15px 15px 15px 15px ;
+                    transition: .2s ease;
+                }
+    
+                button:hover{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--main-color);
+                    background-color: var(--white-color);
+                    border: 2px solid var(--main-color);
+                    cursor: pointer;
+                    font-size: 20px;
+                    padding: 15px 15px 15px 15px ;
+                    transition: .2s ease;
+                }
+            }
+        }
+    
+        .editEntrepriseModalBack{
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.456);
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+    }
+}
