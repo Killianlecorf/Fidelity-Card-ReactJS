@@ -1,0 +1,33 @@
+.NavigationSettings{
+    width: 83vw;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    a{
+        width: auto;
+        height: 50%;
+
+        button{
+            width: auto;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            transition: .1s ease;
+            margin-right: 15px;
+            padding: 0 15px 0 15px ;
+        }
+    
+        button:hover{
+            width: auto;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            border-bottom: 3px solid var(--main-color);
+            font-size: 15px;
+            transition: .1s ease;
+        }
+    }
+}
