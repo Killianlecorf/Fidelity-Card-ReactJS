@@ -8,6 +8,7 @@ import EntreprisePage from './Pages/EntreprisePage';
 import AddEntreprisePage from './Pages/AddEntreprisePage';
 import AccueilEntreprise from './Pages/AccueilEntreprise';
 import BoutiqueEntreprise from './Pages/BoutiqueEntreprise';
+import SettingsEntreprise from './Pages/SettingsEntreprise';
 
 function App(): JSX.Element {
   const [isAuthenticated, isLoading] = useAuth();
@@ -45,6 +46,10 @@ function App(): JSX.Element {
             <Route
               path="/entreprise/:entrepriseId/boutique"
               element={isAuthenticated ? <BoutiqueEntreprise/>: <Navigate to="/" />}
+            />
+            <Route
+              path="/entreprise/settings"
+              element={isAuthenticated ? <SettingsEntreprise />: <Navigate to="/" />}
             />
           </Routes>
         </Router>

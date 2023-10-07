@@ -11,7 +11,9 @@ const NavBar = () => {
     return (
         <div className='navBar' style={{ "backgroundColor": secondaryColor}}>
             <li>
-                <button style={{ "backgroundColor": secondaryColor }}>Accueil</button>
+                <NavLink to='/home'>
+                    <button style={{ "backgroundColor": secondaryColor }}>Accueil</button>
+                </NavLink>
             </li>
             <li>
                 <button style={{ "backgroundColor": secondaryColor}}>Statistiques</button>
