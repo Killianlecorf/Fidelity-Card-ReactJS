@@ -1,5 +1,5 @@
 import React , {useContext} from 'react';
-import logo from '../../Assets/img/logo-blanc.png';
+import logo from '../../Assets/img/logo_panda_blanc_2.png';
 import { FaUserCircle, FaRegSun, FaPowerOff, FaBars} from "react-icons/fa";
 import fetchApi from '../../Utils/request'
 import UrlRedirection from '../../Utils/UrlRedirection'

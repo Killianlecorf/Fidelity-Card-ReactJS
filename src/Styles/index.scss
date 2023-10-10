@@ -9,6 +9,7 @@
 @import './Pages/AddEntreprisePage';
 @import './Pages/AccueilEntreprise';
 @import './Pages/BoutiqueEntreprise';
+@import './Pages/SettingsEntreprise';
 
 // components
 
@@ -24,6 +25,9 @@
 @import './Components/ConfirmationModal';
 @import './Components/ViewBoutiqueEntreprise';
 @import './Components/StatHome';
+@import './Components/EditeEntrepriseModal';
+@import './Components/NavigationSettings';
+@import './Components/EntrepriseSettingsComponents';
 
 // UI Kit
 

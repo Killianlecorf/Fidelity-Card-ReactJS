@@ -24,7 +24,7 @@ const ConfirmationModal: React.FC<IConfirmationModalProps> = ({isOpen, setIsOpen
                     <h2>Veuillez confirmer</h2>
                 </div>
                 <div className="textConfirmationContent">
-                    <p>Veuillez confirmer de {confimationtext}</p>
+                    <p>Veuillez confirmer {confimationtext}</p>
                 </div>
                 <div className="confirmationModalButton">
                     <button className='mainStyle' onClick={onConfirm}>Confirmer</button>
