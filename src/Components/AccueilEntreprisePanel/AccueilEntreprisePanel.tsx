@@ -24,7 +24,7 @@ const AccueilEntreprisePanel = () => {
             <div className="ChoisePanelContent">
                 <FieldCard icon={<HiOutlineUserGroup/>} title='Base de donnée client' url='/enterprise/client' />
                 <FieldCard icon={<BsShop/>} title='Vos Boutiques' url={`/entreprise/${entrepriseId}/boutique`}/>
-                <FieldCard icon={<FiSettings/>} title="Option de l'entreprise" url='/entreprise/settings'/>
+                <FieldCard icon={<FiSettings/>} title="Option de l'entreprise" url={`/entreprise/settings/${entrepriseId}`}/>
             </div>
         </div>
     ); 
