@@ -48,7 +48,7 @@ function App(): JSX.Element {
               element={isAuthenticated ? <BoutiqueEntreprise/>: <Navigate to="/" />}
             />
             <Route
-              path="/entreprise/settings"
+              path="/entreprise/settings/:entrepriseId"
               element={isAuthenticated ? <SettingsEntreprise />: <Navigate to="/" />}
             />
           </Routes>

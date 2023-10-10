@@ -1,13 +1,10 @@
 import React from 'react';
 import NavigationSettings from '../NavigationSettings';
-import BackPage from '../UI-Kit/BackPage';
+import AddBoutiqueForm from '../AddBoutiqueForm';
 
 const EntrepriseSettingsComponent = () => {
     return (
         <div className='EntrepriseSettingsComponent'>
-            <div className="backPageContentEntrepriseSettings">
-                <BackPage urlRedirection='/entreprise' />
-            </div>
             <NavigationSettings 
                 firstTextNavigation='Ajout de boutique' 
                 linkFirstNavigation='/entreprise/settings/add/boutique'
@@ -18,6 +15,7 @@ const EntrepriseSettingsComponent = () => {
                 isOpenFourth={false} 
                 isOpenFifth={false}
             />
+            <AddBoutiqueForm />
         </div>
     );
 };

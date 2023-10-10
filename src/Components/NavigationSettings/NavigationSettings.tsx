@@ -17,6 +17,7 @@ interface INavigationSettings {
 }
 
 const NavigationSettings: React.FC<INavigationSettings> = ({firstTextNavigation, linkFirstNavigation, secondTextNavigation, linkSecondNavigation, thirdTextNavigation, linkThirdNavigation, isOpenFourth, FourthTextNavigation, linkFourthNavigation, isOpenFifth, FifthTextNavigation, linkFifthNavigation}) => {
+    
 
     const addButtonNavigationSettings = () => {
         if (isOpenFourth) {
@@ -36,7 +37,7 @@ const NavigationSettings: React.FC<INavigationSettings> = ({firstTextNavigation,
 
     return (
         <div className='NavigationSettings'>
-            <NavLink to={linkFirstNavigation}>
+            <NavLink to={linkFirstNavigation} >
                 <button>{firstTextNavigation}</button>
             </NavLink>
             <NavLink to={linkSecondNavigation}>
