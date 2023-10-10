@@ -58,19 +58,21 @@ const AddBoutiqueForm = () => {
     return (
         <div className='AddBoutiqueFormBack'>
             <div className="AddBoutiqueForm">
-                <div className="entrepriseForm">
+                <div className="BoutiqueForm">
                     <div className="titleFormBoutique">
-                        <h2>Création d'entreprise</h2>
+                        <h2>Création de boutique</h2>
                     </div>
                     <div className="inputNameContentBoutique">
-                        <label>Nom de l'entreprise</label>
+                        <label>Nom de la boutique</label>
                         <input name='name' onChange={handleLogin} type="text" />
                     </div>
                     <div className="descriptionNameContentBoutique">
-                        <label>description de l'entreprise</label>
+                        <label>description de la boutique</label>
                         <textarea name='description' onChange={handleLogin}></textarea>
                     </div>
-                    {displayErrorMessage()}
+                    <div className="errorMessageBoutique">
+                        {displayErrorMessage()}
+                    </div>
                     <div className="submitButtonEntrepriseFormBoutique">
                         <button onClick={validationForm}>Créer l'entreprise</button>
                     </div>
