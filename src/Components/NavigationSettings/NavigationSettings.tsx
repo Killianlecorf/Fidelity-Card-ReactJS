@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 interface INavigationSettings {
@@ -18,6 +18,15 @@ interface INavigationSettings {
 
 const NavigationSettings: React.FC<INavigationSettings> = ({firstTextNavigation, linkFirstNavigation, secondTextNavigation, linkSecondNavigation, thirdTextNavigation, linkThirdNavigation, isOpenFourth, FourthTextNavigation, linkFourthNavigation, isOpenFifth, FifthTextNavigation, linkFifthNavigation}) => {
 
+    const [currentPage, setCurrentPage] = useState(linkFirstNavigation);
+
+    console.log(currentPage);
+    
+
+    const changePage = (pageName: string) => {
+        setCurrentPage(pageName);
+      };
+
     const addButtonNavigationSettings = () => {
         if (isOpenFourth) {
             return( <NavLink to={linkFourthNavigation || ""}>
@@ -36,7 +45,7 @@ const NavigationSettings: React.FC<INavigationSettings> = ({firstTextNavigation,
 
     return (
         <div className='NavigationSettings'>
-            <NavLink to={linkFirstNavigation}>
+            <NavLink onClick={() => changePage(linkFirstNavigation)} to={linkFirstNavigation}>
                 <button>{firstTextNavigation}</button>
             </NavLink>
             <NavLink to={linkSecondNavigation}>
