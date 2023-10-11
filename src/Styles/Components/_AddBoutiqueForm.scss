@@ -45,7 +45,7 @@
 
             .descriptionNameContentBoutique{
                 width: 50%;
-                height: 45%;
+                height: 50%;
                 display: flex;
                 flex-direction: column;
 
@@ -58,19 +58,21 @@
                     width: 100%;
                     height: 50%;
                     resize: none;
+                    border-radius: 5px;
+                    padding: 10px 0 0 10px;
                 }
             }
 
             .errorMessageBoutique{
                 width: 100%;
-                height: 10%;
+                height: 5%;
             }
 
             .submitButtonEntrepriseFormBoutique{
                 width: 100%;
                 height: 10%;
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: center;
 
                 button{
@@ -110,6 +112,92 @@
             height: 90%;
             background-color: var(--white-color);
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+            .BoutiqueForm{
+                width:100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+                .titleFormBoutique{
+                    width: 100%;
+                    height: 10%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                }
+    
+                .inputNameContentBoutique{
+                    width: 95%;
+                    height: 15%;
+                    display: flex;
+                    flex-direction: column;
+    
+                    label{
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+    
+                    input{
+                        width: 100%;
+                    }
+                }
+    
+                .descriptionNameContentBoutique{
+                    width: 95%;
+                    height: 50%;
+                    display: flex;
+                    flex-direction: column;
+    
+                    label{
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+    
+                    textarea{
+                        width: 100%;
+                        height: 50%;
+                        resize: none;
+                        border-radius: 5px;
+                        padding: 10px 0 0 10px;
+                    }
+                }
+    
+                .errorMessageBoutique{
+                    width: 100%;
+                    height: 5%;
+                }
+    
+                .submitButtonEntrepriseFormBoutique{
+                    width: 100%;
+                    height: 10%;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+    
+                    button{
+                        width: 150px;
+                        height: 45px;
+                        background-color: var(--main-color);
+                        color: white;
+                        border: 1px solid white;
+                        font-size: 15px;
+                        cursor: pointer;
+                        font-family: var(--bold-font);
+                    }
+        
+                    button:hover{
+                        width: 150px;
+                        height: 45px;
+                        background-color: white;
+                        color: var(--main-color);
+                        border: 1px solid var(--main-color);
+                        font-size: 15px;
+                    }
+                }
+            }
         }
     }
 }

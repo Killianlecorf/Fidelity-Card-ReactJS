@@ -1,19 +1,18 @@
 import React from 'react';
 import NavigationSettings from '../NavigationSettings';
-import AddBoutiqueForm from '../AddBoutiqueForm';
 import { useParams } from 'react-router-dom';
+import CardEditBoutique from '../UI-Kit/CardEditBoutique';
 
 interface RouteParamsEntrepriseId extends Record<string, string | undefined>{
     entrepriseId: string;
 }
 
-const EntrepriseSettingsComponent = () => {
+const ManagementBoutique = () => {
 
     const {entrepriseId} = useParams<RouteParamsEntrepriseId>()
-    
 
     return (
-        <div className='EntrepriseSettingsComponent'>
+        <div className='ManagementBoutique'>
             <NavigationSettings 
                 firstTextNavigation='Ajout de boutique' 
                 linkFirstNavigation={`/entreprise/settings/${entrepriseId}`}
@@ -24,9 +23,16 @@ const EntrepriseSettingsComponent = () => {
                 isOpenFourth={false} 
                 isOpenFifth={false}
             />
-            <AddBoutiqueForm />
+            <div className="BoutiqueEditContent">
+                <div className="BoutiqueEditCardContent">
+                    <CardEditBoutique titleEditBoutiqueCard='Boutique' descriptionEditBoutique="description d'une boutique" />
+                </div>
+            </div>
+            <div className="paginationBoutiqueEditContent">
+
+            </div>
         </div>
     );
 };
 
-export default EntrepriseSettingsComponent;
+export default ManagementBoutique;
