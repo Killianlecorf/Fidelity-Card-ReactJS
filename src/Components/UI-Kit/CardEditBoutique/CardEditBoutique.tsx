@@ -1,12 +1,28 @@
 import React from 'react';
 import { BsShop } from "react-icons/bs";
+import fetchApi from "../../../Utils/request";
+import redirectToPage from "../../../Utils/UrlRedirection";
+import { useParams } from 'react-router-dom';
 
 interface ICardEditBoutique {
     titleEditBoutiqueCard: string;
     descriptionEditBoutique: string;
+    boutiqueId : string;
 }
 
-const CardEditBoutique:React.FC<ICardEditBoutique> = ({titleEditBoutiqueCard, descriptionEditBoutique}) => {
+const CardEditBoutique:React.FC<ICardEditBoutique> = ({titleEditBoutiqueCard, descriptionEditBoutique, boutiqueId}) => {
+    
+    const {entrepriseId} = useParams()
+
+    const deleteBoutique = async () => {
+        try {
+          await fetchApi(`/boutique/${entrepriseId}/${boutiqueId}`, 'DELETE');
+          redirectToPage(`/entreprise/settings/edit/boutique/${entrepriseId}`);
+        } catch (error) {
+          console.error("Une erreur s'est produite lors de la suppression de la boutique : ", error);
+        }
+      }
+    
     return (
         <div className='CardEditBoutique'>
             <div className="titleEditContent">
@@ -21,7 +37,7 @@ const CardEditBoutique:React.FC<ICardEditBoutique> = ({titleEditBoutiqueCard, de
                 </div>
             </div>
             <div className="EditBoutiqueManager">
-                <div className="deleteBoutiqueButton">
+                <div onClick={deleteBoutique} className="deleteBoutiqueButton">
                     <p>Supprimer</p>
                 </div>
                 <div className="editBoutiqueButton">
