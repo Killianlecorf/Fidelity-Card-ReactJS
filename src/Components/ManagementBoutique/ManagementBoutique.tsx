@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import CardEditBoutique from '../UI-Kit/CardEditBoutique';
 import fetchApi from '../../Utils/request';
 import PaginationNumber from '../PaginationNumber';
+import EditBoutiqueModal from '../EditBoutiqueModal';
 
 interface RouteParamsEntrepriseId extends Record<string, string | undefined> {
   entrepriseId: string;
@@ -19,7 +20,12 @@ const ManagementBoutique = () => {
   const { entrepriseId } = useParams<RouteParamsEntrepriseId>();
   const [boutiques, setBoutiques] = useState<IBoutiques[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isOpenEditBoutiqueModal, setIsOpenEditBoutiqueModal]= useState<boolean>()
   const itemsPerPage = 2; 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentBoutiques = boutiques.slice(indexOfFirstItem, indexOfLastItem);
+
 
   const getBoutique = async () => {
     try {
@@ -34,10 +40,11 @@ const ManagementBoutique = () => {
     getBoutique();
   }, [entrepriseId]);
 
-  // Calculate the index of the first and last items to display on the current page
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentBoutiques = boutiques.slice(indexOfFirstItem, indexOfLastItem);
+  const displayEditBoutiqueModal = () => {
+    if (isOpenEditBoutiqueModal) {
+      // return <EditBoutiqueModal setIsOpen={setIsOpenEditBoutiqueModal}/>
+    }
+  }
 
   return (
     <div className="ManagementBoutique">
@@ -70,6 +77,7 @@ const ManagementBoutique = () => {
         onPageChange={setCurrentPage}
         />
       </div>
+      {/* {displayEditBoutiqueModal()} */}
     </div>
   );
 };
