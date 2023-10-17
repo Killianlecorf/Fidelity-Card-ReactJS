@@ -25,13 +25,16 @@
 @import './Components/ConfirmationModal';
 @import './Components/ViewBoutiqueEntreprise';
 @import './Components/StatHome';
-@import './Components/EditeEntrepriseModal';
+@import './Components/EditEntrepriseModal';
 @import './Components/NavigationSettings';
 @import './Components/EntrepriseSettingsComponents';
 @import './Components/AddBoutiqueForm';
+@import './Components/ManagementBoutique';
+@import './Components/EditBoutiqueModal';
 
 // UI Kit
 
 @import './Components/UI-Kit/BackPage';
 @import './Components/UI-Kit/FieldCard';
 @import './Components/UI-Kit/ChartComponent';
+@import './Components/UI-Kit/CardEditBoutique';

@@ -1,34 +1,50 @@
-.AddBoutiqueFormBack{
-    width: 83vw;
-    height: 65vh;
+.EditBoutiqueModalBack{
+    width: 100vw;
+    height: 80vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 20vh;
+    left: 0;
 
-    .AddBoutiqueForm{
-        width: 65%;
-        height: 90%;
+    .editBoutiqueModalContent{
+        width: 50vw;
+        height:75vh;
         background-color: var(--white-color);
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        
-        .BoutiqueForm{
+        z-index: 500;
+
+        .closeModal{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            svg{
+                font-size: 35px;
+                margin-right: 25px;
+                cursor: pointer;
+            }
+        }
+
+        .EditBoutiqueForm{
             width:100%;
             height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
 
-            .titleFormBoutique{
+            .titleFormEditBoutique{
                 width: 100%;
-                height: 15%;
+                height: 10%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
             }
 
-            .inputNameContentBoutique{
+            .inputNameContentEditBoutique{
                 width: 50%;
                 height: 15%;
                 display: flex;
@@ -44,9 +60,9 @@
                 }
             }
 
-            .descriptionNameContentBoutique{
+            .descriptionNameContentEditBoutique{
                 width: 50%;
-                height: 45%;
+                height: 50%;
                 display: flex;
                 flex-direction: column;
 
@@ -64,12 +80,7 @@
                 }
             }
 
-            .errorMessageBoutique{
-                width: 100%;
-                height: 5%;
-            }
-
-            .submitButtonEntrepriseFormBoutique{
+            .submitButtonEditBoutique{
                 width: 100%;
                 height: 10%;
                 display: flex;
@@ -77,8 +88,8 @@
                 justify-content: center;
 
                 button{
-                    width: 150px;
-                    height: 45px;
+                    width: 200px;
+                    height: 50px;
                     background-color: var(--main-color);
                     color: white;
                     border: 1px solid white;
@@ -88,8 +99,8 @@
                 }
     
                 button:hover{
-                    width: 150px;
-                    height: 45px;
+                    width: 200px;
+                    height: 50px;
                     background-color: white;
                     color: var(--main-color);
                     border: 1px solid var(--main-color);
@@ -98,30 +109,56 @@
             }
         }
     }
+
+    .EditBoutiqueModalBackColor{
+        position: fixed;
+        width: 100vw;
+        height: 80vh;
+        top: 20vh;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.456);
+    }
 }
 
 @media (max-width: 850px) {
-    .AddBoutiqueFormBack{
+    .EditBoutiqueModalBack{
         width: 100vw;
-        height: 70vh;
+        height: 80vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: fixed;
+        top: 20vh;
+        left: 0;
     
-        .AddBoutiqueForm{
-            width: 95%;
-            height: 90%;
+        .editBoutiqueModalContent{
+            width: 100vw;
+            height:80vh;
             background-color: var(--white-color);
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-            .BoutiqueForm{
+            z-index: 500;
+    
+            .closeModal{
+                width: 100%;
+                height: 10%;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+    
+                svg{
+                    font-size: 35px;
+                    margin-right: 25px;
+                    cursor: pointer;
+                }
+            }
+    
+            .EditBoutiqueForm{
                 width:100%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
     
-                .titleFormBoutique{
+                .titleFormEditBoutique{
                     width: 100%;
                     height: 10%;
                     display: flex;
@@ -130,8 +167,8 @@
     
                 }
     
-                .inputNameContentBoutique{
-                    width: 95%;
+                .inputNameContentEditBoutique{
+                    width: 75%;
                     height: 15%;
                     display: flex;
                     flex-direction: column;
@@ -146,8 +183,8 @@
                     }
                 }
     
-                .descriptionNameContentBoutique{
-                    width: 95%;
+                .descriptionNameContentEditBoutique{
+                    width: 75%;
                     height: 50%;
                     display: flex;
                     flex-direction: column;
@@ -166,12 +203,7 @@
                     }
                 }
     
-                .errorMessageBoutique{
-                    width: 100%;
-                    height: 5%;
-                }
-    
-                .submitButtonEntrepriseFormBoutique{
+                .submitButtonEditBoutique{
                     width: 100%;
                     height: 10%;
                     display: flex;
@@ -179,8 +211,8 @@
                     justify-content: center;
     
                     button{
-                        width: 150px;
-                        height: 45px;
+                        width: 200px;
+                        height: 50px;
                         background-color: var(--main-color);
                         color: white;
                         border: 1px solid white;
@@ -190,8 +222,8 @@
                     }
         
                     button:hover{
-                        width: 150px;
-                        height: 45px;
+                        width: 200px;
+                        height: 50px;
                         background-color: white;
                         color: var(--main-color);
                         border: 1px solid var(--main-color);
@@ -199,6 +231,15 @@
                     }
                 }
             }
+        }
+    
+        .EditBoutiqueModalBackColor{
+            position: fixed;
+            width: 100vw;
+            height: 80vh;
+            top: 20vh;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.456);
         }
     }
 }
