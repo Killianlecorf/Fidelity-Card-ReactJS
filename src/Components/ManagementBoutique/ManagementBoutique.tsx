@@ -24,7 +24,7 @@ const ManagementBoutique = () => {
   const itemsPerPage = 2; 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentBoutiques = boutiques.slice(indexOfFirstItem, indexOfLastItem);
+  const currentBoutiques = boutiques ? boutiques.slice(indexOfFirstItem, indexOfLastItem) : [];
 
 
   const getBoutique = async () => {
@@ -42,7 +42,7 @@ const ManagementBoutique = () => {
 
   const displayEditBoutiqueModal = () => {
     if (isOpenEditBoutiqueModal) {
-      return <EditBoutiqueModal setIsOpen={setIsOpenEditBoutiqueModal}/>
+      return <EditBoutiqueModal setIsOpen={setIsOpenEditBoutiqueModal} isOpen={isOpenEditBoutiqueModal}/>
     }else{
       return null
     }

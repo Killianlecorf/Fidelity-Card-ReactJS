@@ -1,3 +1,245 @@
 .EditBoutiqueModalBack{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20vh;
+    left: 0;
 
+    .editBoutiqueModalContent{
+        width: 50vw;
+        height:75vh;
+        background-color: var(--white-color);
+        z-index: 500;
+
+        .closeModal{
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            svg{
+                font-size: 35px;
+                margin-right: 25px;
+                cursor: pointer;
+            }
+        }
+
+        .EditBoutiqueForm{
+            width:100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .titleFormEditBoutique{
+                width: 100%;
+                height: 10%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .inputNameContentEditBoutique{
+                width: 50%;
+                height: 15%;
+                display: flex;
+                flex-direction: column;
+
+                label{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+
+                input{
+                    width: 100%;
+                }
+            }
+
+            .descriptionNameContentEditBoutique{
+                width: 50%;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+
+                label{
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+
+                textarea{
+                    width: 100%;
+                    height: 50%;
+                    resize: none;
+                    border-radius: 5px;
+                    padding: 10px 0 0 10px;
+                }
+            }
+
+            .submitButtonEditBoutique{
+                width: 100%;
+                height: 10%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+
+                button{
+                    width: 200px;
+                    height: 50px;
+                    background-color: var(--main-color);
+                    color: white;
+                    border: 1px solid white;
+                    font-size: 15px;
+                    cursor: pointer;
+                    font-family: var(--bold-font);
+                }
+    
+                button:hover{
+                    width: 200px;
+                    height: 50px;
+                    background-color: white;
+                    color: var(--main-color);
+                    border: 1px solid var(--main-color);
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    .EditBoutiqueModalBackColor{
+        position: fixed;
+        width: 100vw;
+        height: 80vh;
+        top: 20vh;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.456);
+    }
+}
+
+@media (max-width: 850px) {
+    .EditBoutiqueModalBack{
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 20vh;
+        left: 0;
+    
+        .editBoutiqueModalContent{
+            width: 100vw;
+            height:80vh;
+            background-color: var(--white-color);
+            z-index: 500;
+    
+            .closeModal{
+                width: 100%;
+                height: 10%;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+    
+                svg{
+                    font-size: 35px;
+                    margin-right: 25px;
+                    cursor: pointer;
+                }
+            }
+    
+            .EditBoutiqueForm{
+                width:100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+                .titleFormEditBoutique{
+                    width: 100%;
+                    height: 10%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                }
+    
+                .inputNameContentEditBoutique{
+                    width: 75%;
+                    height: 15%;
+                    display: flex;
+                    flex-direction: column;
+    
+                    label{
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+    
+                    input{
+                        width: 100%;
+                    }
+                }
+    
+                .descriptionNameContentEditBoutique{
+                    width: 75%;
+                    height: 50%;
+                    display: flex;
+                    flex-direction: column;
+    
+                    label{
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+    
+                    textarea{
+                        width: 100%;
+                        height: 50%;
+                        resize: none;
+                        border-radius: 5px;
+                        padding: 10px 0 0 10px;
+                    }
+                }
+    
+                .submitButtonEditBoutique{
+                    width: 100%;
+                    height: 10%;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+    
+                    button{
+                        width: 200px;
+                        height: 50px;
+                        background-color: var(--main-color);
+                        color: white;
+                        border: 1px solid white;
+                        font-size: 15px;
+                        cursor: pointer;
+                        font-family: var(--bold-font);
+                    }
+        
+                    button:hover{
+                        width: 200px;
+                        height: 50px;
+                        background-color: white;
+                        color: var(--main-color);
+                        border: 1px solid var(--main-color);
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    
+        .EditBoutiqueModalBackColor{
+            position: fixed;
+            width: 100vw;
+            height: 80vh;
+            top: 20vh;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.456);
+        }
+    }
 }
