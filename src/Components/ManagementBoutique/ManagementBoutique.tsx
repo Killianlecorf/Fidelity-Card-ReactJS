@@ -20,7 +20,7 @@ const ManagementBoutique = () => {
   const { entrepriseId } = useParams<RouteParamsEntrepriseId>();
   const [boutiques, setBoutiques] = useState<IBoutiques[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [isOpenEditBoutiqueModal, setIsOpenEditBoutiqueModal]= useState<boolean>()
+  const [isOpenEditBoutiqueModal, setIsOpenEditBoutiqueModal]= useState<boolean>(false)
   const itemsPerPage = 2; 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -42,7 +42,9 @@ const ManagementBoutique = () => {
 
   const displayEditBoutiqueModal = () => {
     if (isOpenEditBoutiqueModal) {
-      // return <EditBoutiqueModal setIsOpen={setIsOpenEditBoutiqueModal}/>
+      return <EditBoutiqueModal setIsOpen={setIsOpenEditBoutiqueModal}/>
+    }else{
+      return null
     }
   }
 
@@ -77,7 +79,7 @@ const ManagementBoutique = () => {
         onPageChange={setCurrentPage}
         />
       </div>
-      {/* {displayEditBoutiqueModal()} */}
+      {displayEditBoutiqueModal()}
     </div>
   );
 };
