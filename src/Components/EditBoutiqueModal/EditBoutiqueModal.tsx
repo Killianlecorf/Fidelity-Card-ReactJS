@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { AiOutlineClose } from "react-icons/ai";
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import fetchAPI from '../../Utils/request';
+import urlRedirection from '../../Utils/UrlRedirection';
 
 interface IEditBoutiqueModal {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isOpen: boolean;
   boutiqueId?: string;
+  boutiqueName?: string;
+  boutiqueDescription?: string;
 }
 
 interface InformationBoutique {
@@ -18,15 +21,13 @@ interface RouteParamsEntrepriseId extends Record<string, string | undefined> {
   entrepriseId: string;
 }
 
-const EditBoutiqueModal: React.FC<IEditBoutiqueModal> = ({ setIsOpen, isOpen, boutiqueId }) => {
+const EditBoutiqueModal: React.FC<IEditBoutiqueModal> = ({ setIsOpen, isOpen, boutiqueId, boutiqueName, boutiqueDescription}) => {
   const { entrepriseId } = useParams<RouteParamsEntrepriseId>();
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [informationBoutique, setInformationBoutique] = useState<InformationBoutique>({
-    name: '',
-    description: '',
+    name: boutiqueName || '',
+    description: boutiqueDescription || '',
   });
-
-  const navigate = useNavigate();
 
   const validationForm = async () => {
     const boutique = {
@@ -37,7 +38,7 @@ const EditBoutiqueModal: React.FC<IEditBoutiqueModal> = ({ setIsOpen, isOpen, bo
     try {
       const response = await fetchAPI(`/boutique/${entrepriseId}/${boutiqueId}`, 'PUT', boutique);
       if (response.ok) {
-        navigate(`/entreprise/settings/edit/boutique/${entrepriseId}`);
+        urlRedirection(`/entreprise/settings/edit/boutique/${entrepriseId}`);
       } else if (response.status === 401) {
         setErrorMessage('Boutique déjà existante');
       }
@@ -56,10 +57,7 @@ const EditBoutiqueModal: React.FC<IEditBoutiqueModal> = ({ setIsOpen, isOpen, bo
 
   const closeModalEditModal = () => {
     setIsOpen(!isOpen);
-  };
-
-  console.log();
-  
+  }; 
 
   return (
     <div className="EditBoutiqueModalBack">
@@ -73,11 +71,11 @@ const EditBoutiqueModal: React.FC<IEditBoutiqueModal> = ({ setIsOpen, isOpen, bo
           </div>
           <div className="inputNameContentEditBoutique">
             <label>Nom de la boutique</label>
-            <input name="name" onChange={handleEditBoutique} type="text" />
+            <input name="name" onChange={handleEditBoutique} type="text" value={informationBoutique.name}/>
           </div>
           <div className="descriptionNameContentEditBoutique">
             <label>Description de la boutique</label>
-            <textarea name="description" onChange={handleEditBoutique}></textarea>
+            <textarea name="description" onChange={handleEditBoutique} value={informationBoutique.description}></textarea>
           </div>
           <div className="errorMessageEditBoutique">{errorMessage}</div>
           <div className="submitButtonEditBoutique">

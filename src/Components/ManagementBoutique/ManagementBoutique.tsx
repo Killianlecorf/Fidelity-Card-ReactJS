@@ -68,6 +68,8 @@ const ManagementBoutique = () => {
               titleEditBoutiqueCard={boutique.name}
               descriptionEditBoutique={boutique.description}
               boutiqueId={boutique._id}
+              boutiqueName={boutique.name}
+              boutiqueDescription={boutique.description}
             />
           ))}
         </div>

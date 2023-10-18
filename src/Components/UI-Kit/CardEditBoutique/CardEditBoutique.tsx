@@ -10,9 +10,11 @@ interface ICardEditBoutique {
     titleEditBoutiqueCard: string;
     descriptionEditBoutique: string;
     boutiqueId : string;
+    boutiqueName?: string;
+    boutiqueDescription?: string;
 }
 
-const CardEditBoutique:React.FC<ICardEditBoutique> = ({titleEditBoutiqueCard, descriptionEditBoutique, boutiqueId}) => {
+const CardEditBoutique:React.FC<ICardEditBoutique> = ({titleEditBoutiqueCard, descriptionEditBoutique, boutiqueId, boutiqueName, boutiqueDescription }) => {
     
     const {entrepriseId} = useParams()
     const [isOpenConfirmationModal, setIsOpenConfirmationModal] = useState<boolean>(false)
@@ -45,7 +47,7 @@ const CardEditBoutique:React.FC<ICardEditBoutique> = ({titleEditBoutiqueCard, de
     
     const displayEditModal = () => {
         if (isOpenEditModal) {
-            return <EditBoutiqueModal isOpen={isOpenEditModal} setIsOpen={setIsOpenEditModal} boutiqueId={boutiqueId}/>;
+            return <EditBoutiqueModal isOpen={isOpenEditModal} setIsOpen={setIsOpenEditModal} boutiqueId={boutiqueId} boutiqueName={boutiqueName} boutiqueDescription={boutiqueDescription} />;
         }
         return null;
     }
