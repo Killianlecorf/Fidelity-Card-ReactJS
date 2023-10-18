@@ -75,11 +75,10 @@ const ManagementBoutique = () => {
         </div>
       </div>
       <div className="paginationBoutiqueEditContent">
-        <PaginationNumber 
-        currentPage={currentPage}
-        totalPages={Math.ceil(boutiques.length / itemsPerPage)}
-        onPageChange={setCurrentPage}
-        />
+      <PaginationNumber 
+      currentPage={currentPage} 
+      totalPages={Math.ceil(boutiques.length / itemsPerPage)} 
+      onPageChange={setCurrentPage}/>
       </div>
       {displayEditBoutiqueModal()}
     </div>
