@@ -68,16 +68,17 @@ const ManagementBoutique = () => {
               titleEditBoutiqueCard={boutique.name}
               descriptionEditBoutique={boutique.description}
               boutiqueId={boutique._id}
+              boutiqueName={boutique.name}
+              boutiqueDescription={boutique.description}
             />
           ))}
         </div>
       </div>
       <div className="paginationBoutiqueEditContent">
-        <PaginationNumber 
-        currentPage={currentPage}
-        totalPages={Math.ceil(boutiques.length / itemsPerPage)}
-        onPageChange={setCurrentPage}
-        />
+      <PaginationNumber 
+      currentPage={currentPage} 
+      totalPages={Math.ceil(boutiques.length / itemsPerPage)} 
+      onPageChange={setCurrentPage}/>
       </div>
       {displayEditBoutiqueModal()}
     </div>

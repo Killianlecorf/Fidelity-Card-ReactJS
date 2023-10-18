@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import fetchAPI from "../../Utils/request";
-// import UrlRedirection from "../../Utils/UrlRedirection";
-import { useNavigate, useParams } from 'react-router-dom';
+import UrlRedirection from "../../Utils/UrlRedirection";
+import { useParams } from 'react-router-dom';
 import BackPage from '../UI-Kit/BackPage';
 
 interface InformationEntreprise {
@@ -22,7 +22,7 @@ const AddBoutiqueForm = () => {
         description: ''
     });
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
 
     const validationForm = async () => {
@@ -35,7 +35,7 @@ const AddBoutiqueForm = () => {
         
         let response = await fetchAPI(`/boutique/${entrepriseId}/create`, 'POST', boutique);
         if (response.ok) {
-            navigate(`/entreprise/${entrepriseId}`);
+            UrlRedirection(`/entreprise/${entrepriseId}`);
         }
         if (response.status === 401) {
             setErrorMessage('Entreprise déja existante');
