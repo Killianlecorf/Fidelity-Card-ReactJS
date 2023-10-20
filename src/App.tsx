@@ -10,6 +10,7 @@ import AccueilEntreprise from './Pages/AccueilEntreprise';
 import BoutiqueEntreprise from './Pages/BoutiqueEntreprise';
 import SettingsEntreprise from './Pages/SettingsEntreprise';
 import ManagementBoutiquePage from './Pages/ManagamentBoutiquePage';
+import ClientRepoPage from './Pages/ClientRepoPage';
 
 function App(): JSX.Element {
   const [isAuthenticated, isLoading] = useAuth();
@@ -31,6 +32,10 @@ function App(): JSX.Element {
             <Route
               path="/settings"
               element={isAuthenticated ? <SettingsPage /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/client/directory"
+              element={isAuthenticated ? <ClientRepoPage />: <Navigate to="/" />}
             />
             <Route
               path="/entreprise"
