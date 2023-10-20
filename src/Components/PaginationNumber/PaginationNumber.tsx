@@ -15,7 +15,7 @@ interface PaginationProps {
     
     const handlePageChange = (page: number) => {
       onPageChange(page);
-      window.scrollTo({ top: 0, behavior: 'smooth' }); // Fait remonter la page en haut en douceur
+      window.scrollTo({ top: 0, behavior: 'smooth' }); 
     };
     
     return (
