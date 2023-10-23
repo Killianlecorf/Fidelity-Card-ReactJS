@@ -3,7 +3,7 @@ import fetchAPI from '../../Utils/request';
 import { AuthContext } from '../../Contexts/useAuthContext';
 import ClientLine from '../Clientline';
 import { NavLink } from 'react-router-dom';
-// import { AiOutlineSearch } from "react-icons/ai";
+import PaginationNumber from '../PaginationNumber';
 
 interface IInformationClientDirectory {
     _id: string
@@ -18,6 +18,8 @@ interface IInformationClientDirectory {
 const InformationClientContent = () => {
     const { informationUser } = useContext(AuthContext);
 
+    const itemsPerPage = 1;
+    const [currentPage, setCurrentPage] = useState(1);
     const [informationClientDirectory, setInformationClientDirectory] = useState<IInformationClientDirectory[] | null>(null);
 
     const getInformationClient = async () => {
@@ -36,8 +38,13 @@ const InformationClientContent = () => {
     }, []);
 
     if (informationClientDirectory === null) {
+        setInformationClientDirectory([])
         return <p>Chargement en cours...</p>;
     }
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentClient = informationClientDirectory ? informationClientDirectory.slice(indexOfFirstItem, indexOfLastItem) : [];
 
     return (
         <div className='InformationClientContent'>
@@ -62,19 +69,28 @@ const InformationClientContent = () => {
                         Dernière venu
                     </div>
                 </div>
-                {informationClientDirectory.map((clientItem, index) => (
-                    <NavLink to={`client/directory/${clientItem._id}`}>
-                        <ClientLine 
-                            key={index}
-                            Name={clientItem.name}
-                            lName={clientItem.lname}
-                            email={clientItem.email || ''}
-                            address={clientItem.address}
-                            spendAmount={clientItem.spendAmount || 0}
-                            editDate={clientItem.editClientDate}
-                        />
-                    </NavLink>
-                ))}
+                <div className="clientLineContent">
+                    {currentClient.map((clientItem, index) => (
+                        <NavLink to={`client/directory/${clientItem._id}`}>
+                            <ClientLine 
+                                key={index}
+                                Name={clientItem.name}
+                                lName={clientItem.lname}
+                                email={clientItem.email || ''}
+                                address={clientItem.address}
+                                spendAmount={clientItem.spendAmount || 0}
+                                editDate={clientItem.editClientDate}
+                            />
+                        </NavLink>
+                    ))}
+                </div>
+                <div className="infoPaginationClient">
+                <PaginationNumber 
+                    totalPages={Math.ceil(informationClientDirectory.length / itemsPerPage)}
+                    currentPage={currentPage}
+                    onPageChange={setCurrentPage}
+                />
+            </div>
             </div>
         </div>
     );
