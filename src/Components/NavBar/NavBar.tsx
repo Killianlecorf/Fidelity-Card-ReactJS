@@ -19,7 +19,9 @@ const NavBar = () => {
                 <button style={{ "backgroundColor": secondaryColor}}>Statistiques</button>
             </li>
             <li>
-                <button style={{ "backgroundColor": secondaryColor}}>Répértoire Client</button>
+                <NavLink to='/client/directory'>
+                    <button style={{ "backgroundColor": secondaryColor}}>Répértoire Client</button>
+                </NavLink>
             </li>
             <li>
                 <NavLink to='/entreprise'>

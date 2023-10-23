@@ -1,0 +1,105 @@
+.InformationClientContent{
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .clientBoardContent{
+        width: 75%;
+        height: 100%;
+        border: 2px solid black;
+        background-color: var(--white-color);
+
+        .infoBoardClient{
+            width: 100%;
+            height: 10%;
+            display: flex;
+
+            .informationCaseClientName, .informationCaseClientLname, .informationCaseClientSpendAmount {
+                width: 15%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--white-color);
+                background-color: var(--main-color);
+                border-bottom: 2px solid var(--black-color);
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;  
+                text-overflow: ellipsis;
+
+            }
+
+            .informationCaseClientEmail, .informationCaseClientAddress, .informationCaseClientDate {
+                width: 20%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--white-color);
+                background-color: var(--main-color);
+                border-bottom: 2px solid var(--black-color);
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;  
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .InformationClientContent{
+        width: 100vw;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .clientBoardContent{
+            width: 95%;
+            height: 90%;
+            border: 2px solid black;
+            background-color: var(--white-color);
+    
+            .infoBoardClient{
+                width: 100%;
+                height: 10%;
+                display: flex;
+    
+                .informationCaseClientName, .informationCaseClientLname, .informationCaseClientSpendAmount {
+                    width: 15%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: var(--white-color);
+                    background-color: var(--main-color);
+                    border-bottom: 2px solid var(--black-color);
+                    text-align: center;
+                    white-space: nowrap;
+                    overflow: hidden;  
+                    text-overflow: ellipsis;
+    
+                }
+    
+                .informationCaseClientEmail, .informationCaseClientAddress, .informationCaseClientDate {
+                    width: 20%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: var(--white-color);
+                    background-color: var(--main-color);
+                    border-bottom: 2px solid var(--black-color);
+                    text-align: center;
+                    white-space: nowrap;
+                    overflow: hidden;  
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+}

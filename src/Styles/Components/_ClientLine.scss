@@ -1,0 +1,30 @@
+.ClientLine{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    border-bottom: 1px solid var(--black-color);
+    cursor: pointer;
+
+    .NameContent, .lNameContent, .spendAmountContent {
+        width: 15%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--black-color);
+    }
+
+    .emailContent, .addressContent, .editDateContent{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--black-color);
+    }
+}
+
+@media (max-width: 850px) {
+    
+}
