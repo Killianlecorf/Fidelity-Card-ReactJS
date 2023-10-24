@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Header from '../../Components/Header';
-import BackPage from '../../Components/UI-Kit/BackPage';
-import InformationClientContent from '../../Components/informationClientContent';
 import ModalMobile from '../../Components/ModalMobile';
+import BackPage from '../../Components/UI-Kit/BackPage';
+import InformationClientById from '../../Components/InformationClientById';
 
-const ClientRepoPage = () => {
+const ClientPage = () => {
 
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
 
@@ -17,14 +17,14 @@ const ClientRepoPage = () => {
 
     return (
         <div>
-            <Header isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
+            <Header isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />
             <div className="clientPageDirectory">
-                <BackPage urlRedirection='/home'/>
-                <InformationClientContent />
+                <BackPage urlRedirection='/client/directory' />
+                <InformationClientById />
             </div>
             {openModal()}
         </div>
     );
 };
 
-export default ClientRepoPage;
+export default ClientPage;

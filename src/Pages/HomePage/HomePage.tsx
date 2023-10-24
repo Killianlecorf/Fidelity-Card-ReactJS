@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
         <Header isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
         <div className="navbar-content">
           <NavBar />
-          <StatHome />
+          <StatHome /> 
         </div>
         {openModal()}
     </div>
