@@ -4,12 +4,12 @@ interface IClientLine {
     Name : string; 
     lName : string;
     email?: string;
+    phoneNumber?: number;
     address?: string;
     spendAmount?: number;
-    editDate : string;
 }
 
-const ClientLine: React.FC<IClientLine> = ({Name, lName, email, address, spendAmount, editDate}) => {
+const ClientLine: React.FC<IClientLine> = ({Name, lName, email, phoneNumber, address, spendAmount}) => {
     return (
         <div className='ClientLine'>
             <div className="NameContent">
@@ -28,7 +28,7 @@ const ClientLine: React.FC<IClientLine> = ({Name, lName, email, address, spendAm
                 <p>{spendAmount}</p>
             </div>
             <div className="editDateContent">
-                <p>{editDate}</p>
+                <p>{phoneNumber}</p>
             </div>
         </div>
     );
