@@ -19,7 +19,7 @@ interface IInformationClientDirectory {
 const InformationClientContent = () => {
     const { informationUser } = useContext(AuthContext);
 
-    const itemsPerPage = 10;
+    const itemsPerPage = 9;
     const [currentPage, setCurrentPage] = useState(1);
     const [informationClientDirectory, setInformationClientDirectory] = useState<IInformationClientDirectory[] | null>(null);
 
