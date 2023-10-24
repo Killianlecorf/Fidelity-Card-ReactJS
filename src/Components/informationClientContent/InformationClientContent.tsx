@@ -72,7 +72,7 @@ const InformationClientContent = () => {
                 </div>
                 <div className="clientLineContent">
                     {currentClient.map((clientItem, index) => (
-                        <NavLink to={`client/directory/${clientItem._id}`}>
+                        <NavLink to={`/client/directory/${clientItem._id}`}>
                             <ClientLine 
                                 key={index}
                                 Name={clientItem.name}
