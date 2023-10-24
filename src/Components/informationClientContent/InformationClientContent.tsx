@@ -36,7 +36,7 @@ const InformationClientContent = () => {
 
     useEffect(() => {
         getInformationClient();
-    }, []);
+    }, [informationClientDirectory]);
 
     if (informationClientDirectory === null) {
         setInformationClientDirectory([])
