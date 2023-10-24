@@ -1,4 +1,5 @@
 import React from 'react';
+import { LuChevronFirst, LuChevronLast, LuChevronLeft, LuChevronRight } from "react-icons/lu";
 
 interface PaginationProps {
   currentPage: number;
@@ -45,21 +46,33 @@ const PaginationNumber: React.FC<PaginationProps> = ({ currentPage, totalPages, 
     return pageNumbers;
   };
 
+  const limitedPaginationNegative = () =>{
+    if (currentPage > 1 ) {
+      handlePageChange(currentPage - 1)
+    }
+  }
+  
+
+  const limitedPaginationPositive = () =>{
+    if (currentPage < totalPages ) {
+      handlePageChange(currentPage + 1)
+    }
+  }
+
   return (
     <div className="pagination">
       <button
         className="pagination-button-next"
         onClick={() => handlePageChange(1)}
       >
-        Première
+        <LuChevronFirst />
       </button>
 
-{/*  A modifi si on clique sur suivant ou precedent il le fait alors qu'il est a 0 */}
       <button
         className="pagination-button-next"
-        onClick={() => handlePageChange(currentPage - 1)}
+        onClick={() => limitedPaginationNegative()}
       >
-        Précédent
+        <LuChevronLeft />
       </button>
 
       {generatePageNumbers().map((pageNumber: number) => (
@@ -74,16 +87,16 @@ const PaginationNumber: React.FC<PaginationProps> = ({ currentPage, totalPages, 
 
       <button
         className="pagination-button-next"
-        onClick={() => handlePageChange(currentPage + 1)}
+        onClick={() =>limitedPaginationPositive()}
       >
-        Suivant
+        <LuChevronRight/>
       </button>
 
       <button
         className="pagination-button-next"
         onClick={() => handlePageChange(totalPages)}
       >
-        Dernière
+        <LuChevronLast/>
       </button>
     </div>
   );

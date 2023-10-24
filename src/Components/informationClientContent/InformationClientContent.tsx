@@ -10,6 +10,7 @@ interface IInformationClientDirectory {
     name: string;
     lname: string;
     email?: string;
+    phoneNumber?: number;
     address?: string;
     spendAmount?: number;
     editClientDate: string;
@@ -18,7 +19,7 @@ interface IInformationClientDirectory {
 const InformationClientContent = () => {
     const { informationUser } = useContext(AuthContext);
 
-    const itemsPerPage = 1;
+    const itemsPerPage = 10;
     const [currentPage, setCurrentPage] = useState(1);
     const [informationClientDirectory, setInformationClientDirectory] = useState<IInformationClientDirectory[] | null>(null);
 
@@ -66,7 +67,7 @@ const InformationClientContent = () => {
                         Montant dépenser
                     </div>
                     <div className="informationCaseClientDate">
-                        Dernière venu
+                        Téléphone
                     </div>
                 </div>
                 <div className="clientLineContent">
@@ -77,9 +78,9 @@ const InformationClientContent = () => {
                                 Name={clientItem.name}
                                 lName={clientItem.lname}
                                 email={clientItem.email || ''}
+                                phoneNumber={clientItem.phoneNumber}
                                 address={clientItem.address}
                                 spendAmount={clientItem.spendAmount || 0}
-                                editDate={clientItem.editClientDate}
                             />
                         </NavLink>
                     ))}
