@@ -10,9 +10,25 @@ interface IClientLine {
 }
 
 const ClientLine: React.FC<IClientLine> = ({Name, lName, email, phoneNumber, address, spendAmount}) => {
+
+    console.log(Name);
+    console.log(lName);
+    console.log(email);
+    console.log(phoneNumber);
+    console.log(address);
+    console.log(spendAmount);
+
     return (
         <div className='ClientLine'>
-            <div className="NameContent">
+            .
+        </div>
+    );
+};
+
+export default ClientLine;
+
+
+{/* <div className="NameContent">
                 <p>{Name}</p>
             </div>
             <div className="lNameContent">
@@ -29,9 +45,4 @@ const ClientLine: React.FC<IClientLine> = ({Name, lName, email, phoneNumber, add
             </div>
             <div className="editDateContent">
                 <p>{phoneNumber}</p>
-            </div>
-        </div>
-    );
-};
-
-export default ClientLine;
+            </div> */}
