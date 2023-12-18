@@ -75,12 +75,30 @@
                     color: var(--white-color);
                 }
 
+                .params-icon:hover{
+                    width: auto;
+                    height: auto;
+                    font-size: 25px;
+                    cursor: pointer;
+                    margin-right: 35px;
+                    color: var(--secondary-color);
+                }
+
                 .logout-Icon{
                     width: auto;
                     height: auto;
                     font-size: 25px;
                     cursor: pointer;
                     color: var(--white-color);
+                    margin-right: 15px;
+                }
+
+                .logout-Icon:hover{
+                    width: auto;
+                    height: auto;
+                    font-size: 25px;
+                    cursor: pointer;
+                    color: var(--secondary-color);
                     margin-right: 15px;
                 }
             }
