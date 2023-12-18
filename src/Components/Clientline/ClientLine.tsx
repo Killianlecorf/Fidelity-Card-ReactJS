@@ -20,7 +20,12 @@ const ClientLine: React.FC<IClientLine> = ({Name, lName, email, phoneNumber, add
 
     return (
         <div className='ClientLine'>
-            .
+            <td>{Name}</td>
+            <td>{lName}</td>
+            <td>{email}</td>
+            <td>{phoneNumber}</td>
+            <td>{address}</td>
+            <td>{spendAmount}</td>
         </div>
     );
 };
