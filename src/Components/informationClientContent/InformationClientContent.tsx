@@ -4,6 +4,7 @@ import { AuthContext } from '../../Contexts/useAuthContext';
 // import ClientLine from '../Clientline';
 // import { NavLink } from 'react-router-dom';
 import PaginationNumber from '../PaginationNumber';
+import ClientLine from '../Clientline';
 
 interface IInformationClientDirectory {
     _id: string
@@ -53,30 +54,20 @@ const InformationClientContent = () => {
     return (
         <div className='InformationClientContent'>
             <div className="clientBoardContent">
-            <table>
-                    <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>E-mail</th>
-                            <th>Téléphone</th>
-                            <th>Adresse</th>
-                            <th>Montant</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {currentClient.map((clientItem, index) => (
-                            <tr key={index}>
-                                <td>{clientItem.name}</td>
-                                <td>{clientItem.lname}</td>
-                                <td>{clientItem.email || ''}</td>
-                                <td>{clientItem.phoneNumber || ''}</td>
-                                <td>{clientItem.address || ''}</td>
-                                <td>{clientItem.spendAmount || 0}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                <div className="clientCardContent">
+                    {currentClient.map((clientItem, index) => (
+                        <ClientLine 
+                            key={index} 
+                            Name={clientItem.name} 
+                            lName={clientItem.lname} 
+                            email={clientItem.email} 
+                            phoneNumber={clientItem.phoneNumber} 
+                            address={clientItem.address} 
+                            spendAmount={clientItem.spendAmount}
+                            editClient={clientItem.editClientDate}
+                        />
+                    ))}
+                </div>
                 <PaginationNumber 
                     totalPages={Math.ceil(informationClientDirectory.length / itemsPerPage)}
                     currentPage={currentPage}
