@@ -22,13 +22,27 @@ const ClientLine: React.FC<IClientLine> = ({Name, lName, email, phoneNumber, add
 
     return (
         <div className='ClientLine'>
-            <p>{Name}</p>
-            <p>{lName}</p>
-            <p>{email}</p>
-            <p>{phoneNumber}</p>
-            <p>{address}</p>
-            <p>{spendAmount}</p>
-            <p>{editClient}</p>
+            <div className="fullnameClientLine">
+                <div>
+                    <p>{Name}</p>
+                </div>
+                <div>
+                    <p>{lName}</p>
+                </div>
+            </div>
+            <div className="adresseClientLine">
+                <p>{address}</p>
+            </div>
+            <div className="contentInformationClientLine">
+                <p>{email}</p>
+                <p>{phoneNumber}</p>
+            </div>
+            <div className="amountClientLine">
+                <p>{spendAmount} €</p>
+            </div>
+            <div className="dateClientLine">
+                <p>{editClient}</p>
+            </div>
         </div>
     );
 };
