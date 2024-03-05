@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import fetchAPI from '../../Utils/request';
 import { AuthContext } from '../../Contexts/useAuthContext';
-import ClientLine from '../Clientline';
-import { NavLink } from 'react-router-dom';
+// import ClientLine from '../Clientline';
+// import { NavLink } from 'react-router-dom';
 import PaginationNumber from '../PaginationNumber';
 
 interface IInformationClientDirectory {
@@ -44,54 +44,44 @@ const InformationClientContent = () => {
     }
 
     const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentClient = informationClientDirectory ? informationClientDirectory.slice(indexOfFirstItem, indexOfLastItem) : [];
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentClient = informationClientDirectory ? informationClientDirectory.slice(indexOfFirstItem, indexOfLastItem) : [];
+
+    console.log(currentClient);
+    
 
     return (
         <div className='InformationClientContent'>
             <div className="clientBoardContent">
-                <div className="infoBoardClient">
-                    <div className="informationCaseClientLname">
-                        Prénom
-                    </div>
-                    <div className="informationCaseClientName">
-                        Nom
-                    </div>
-                    <div className="informationCaseClientEmail">
-                        Email
-                    </div>
-                    <div className="informationCaseClientAddress">
-                        Adresse
-                    </div>
-                    <div className="informationCaseClientSpendAmount">
-                        Montant dépenser
-                    </div>
-                    <div className="informationCaseClientDate">
-                        Téléphone
-                    </div>
-                </div>
-                <div className="clientLineContent">
-                    {currentClient.map((clientItem, index) => (
-                        <NavLink to={`/client/directory/${clientItem._id}`}>
-                            <ClientLine 
-                                key={index}
-                                Name={clientItem.name}
-                                lName={clientItem.lname}
-                                email={clientItem.email || ''}
-                                phoneNumber={clientItem.phoneNumber}
-                                address={clientItem.address}
-                                spendAmount={clientItem.spendAmount || 0}
-                            />
-                        </NavLink>
-                    ))}
-                </div>
-                <div className="infoPaginationClient">
+            <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>E-mail</th>
+                            <th>Téléphone</th>
+                            <th>Adresse</th>
+                            <th>Montant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {currentClient.map((clientItem, index) => (
+                            <tr key={index}>
+                                <td>{clientItem.name}</td>
+                                <td>{clientItem.lname}</td>
+                                <td>{clientItem.email || ''}</td>
+                                <td>{clientItem.phoneNumber || ''}</td>
+                                <td>{clientItem.address || ''}</td>
+                                <td>{clientItem.spendAmount || 0}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
                 <PaginationNumber 
                     totalPages={Math.ceil(informationClientDirectory.length / itemsPerPage)}
                     currentPage={currentPage}
                     onPageChange={setCurrentPage}
                 />
-            </div>
             </div>
         </div>
     );
