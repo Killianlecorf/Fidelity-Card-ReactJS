@@ -1,6 +1,21 @@
 .InformationClientContent{
-    width: 100vw;
-    height: 70vh;
+   width: 100vw;
+   height: auto;
     display: flex;
+    justify-content: center;
+
+   .clientBoardContent{
+    width: 85%;
+    height: auto;
+    // background-color: red;
+
+    .clientCardContent{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: star;
+    }
+   }
 }
 

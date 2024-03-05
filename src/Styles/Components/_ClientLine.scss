@@ -3,12 +3,70 @@
     height: 350px;
     background-color: var(--grey-color);
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    cursor: pointer;
+    transition: .2s ease;
+    margin: 10px;
+    
+    .fullnameClientLine{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+    }
+
+    .adresseClientLine{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contentInformationClientLine{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p{
+            text-overflow: ellipsis; 
+            max-width: 75%;
+        }
+    }
+
+    .amountClientLine{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .dateClientLine{
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
+.ClientLine:hover{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    transform: translate(-3px,-3px) ;
+    transition: .2s ease;
+}
 
 @media (max-width: 850px) {
     

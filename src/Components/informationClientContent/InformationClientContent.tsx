@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import fetchAPI from '../../Utils/request';
 import { AuthContext } from '../../Contexts/useAuthContext';
-// import ClientLine from '../Clientline';
 // import { NavLink } from 'react-router-dom';
 import PaginationNumber from '../PaginationNumber';
 import ClientLine from '../Clientline';
@@ -47,8 +46,6 @@ const InformationClientContent = () => {
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentClient = informationClientDirectory ? informationClientDirectory.slice(indexOfFirstItem, indexOfLastItem) : [];
-
-    console.log(currentClient);
     
 
     return (
