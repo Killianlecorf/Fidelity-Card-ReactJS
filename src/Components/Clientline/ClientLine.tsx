@@ -7,9 +7,10 @@ interface IClientLine {
     phoneNumber?: number;
     address?: string;
     spendAmount?: number;
+    editClient: string;
 }
 
-const ClientLine: React.FC<IClientLine> = ({Name, lName, email, phoneNumber, address, spendAmount}) => {
+const ClientLine: React.FC<IClientLine> = ({Name, lName, email, phoneNumber, address, spendAmount, editClient}) => {
 
     console.log(Name);
     console.log(lName);
@@ -17,37 +18,19 @@ const ClientLine: React.FC<IClientLine> = ({Name, lName, email, phoneNumber, add
     console.log(phoneNumber);
     console.log(address);
     console.log(spendAmount);
+    console.log(editClient);
 
     return (
         <div className='ClientLine'>
-            <td>{Name}</td>
-            <td>{lName}</td>
-            <td>{email}</td>
-            <td>{phoneNumber}</td>
-            <td>{address}</td>
-            <td>{spendAmount}</td>
+            <p>{Name}</p>
+            <p>{lName}</p>
+            <p>{email}</p>
+            <p>{phoneNumber}</p>
+            <p>{address}</p>
+            <p>{spendAmount}</p>
+            <p>{editClient}</p>
         </div>
     );
 };
 
 export default ClientLine;
-
-
-{/* <div className="NameContent">
-                <p>{Name}</p>
-            </div>
-            <div className="lNameContent">
-                <p>{lName}</p>
-            </div>
-            <div className="emailContent">
-                <p>{email}</p>
-            </div>
-            <div className="addressContent">
-                <p>{address}</p>
-            </div>
-            <div className="spendAmountContent">
-                <p>{spendAmount}</p>
-            </div>
-            <div className="editDateContent">
-                <p>{phoneNumber}</p>
-            </div> */}
