@@ -47,7 +47,17 @@ interface EntrepriseData {
         
     }, [entrepriseIds]);
 
-    
+    const displayButtonAddEntreprise = () => {
+        let lengthEntreprise = informationUser?.entreprise.length || 0
+        if (lengthEntreprise < 3) {
+            return (
+            <NavLink to='/newentreprise'>
+                <button className='buttonAddEntreprise'><FaPlus style={{ marginRight: '15px'}}/> Ajouter une entreprise</button>
+            </NavLink>)
+        }else{
+            return ""
+        }
+    }
 
   return (
     <div>
@@ -59,9 +69,7 @@ interface EntrepriseData {
             <h2>Vos Entreprises</h2>
           </div>
           <div className="buttonAddEntreprise">
-              <NavLink to='/newentreprise'>
-                  <button className='buttonAddEntreprise'><FaPlus style={{ marginRight: '15px'}}/> Ajouter une entreprise</button>
-              </NavLink>
+              {displayButtonAddEntreprise()}
           </div>
           <div className="informationPageEntreprise">
             {informationEntreprise.map((entreprise, index) => (
