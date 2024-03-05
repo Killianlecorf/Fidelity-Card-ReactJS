@@ -1,4 +1,12 @@
 .ClientLine{
+    width: 300px;
+    height: 350px;
+    background-color: var(--grey-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 

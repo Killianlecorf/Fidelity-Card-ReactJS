@@ -7,7 +7,6 @@ import FetchApi from "../../Utils/request";
 import { NavLink } from 'react-router-dom';
 import { FaPlus } from "react-icons/fa6";
 import ModalMobile from '../../Components/ModalMobile';
-import PaginationNumber from '../../Components/PaginationNumber';
 
 
 interface EntrepriseData {
@@ -22,13 +21,6 @@ interface EntrepriseData {
     const { informationUser } = useContext(AuthContext);
     const [informationEntreprise, setInformationEntreprise] = useState<EntrepriseData[]>([]);
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
-    const [currentPage, setCurrentPage] = useState<number>(1);
-
-    const itemsPerPage = 2;
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-
-    const visibleEntreprises = informationEntreprise.slice(startIndex, endIndex);
   
     const entrepriseIds = informationUser?.entreprise || [];
      
@@ -72,11 +64,10 @@ interface EntrepriseData {
               </NavLink>
           </div>
           <div className="informationPageEntreprise">
-            {visibleEntreprises.map((entreprise, index) => (
+            {informationEntreprise.map((entreprise, index) => (
               <EntrepriseCard key={index} name={entreprise.name}  description={entreprise.description} id={entreprise._id} />
             ))}
           </div>
-          <PaginationNumber currentPage={currentPage} totalPages={Math.ceil(informationEntreprise.length / itemsPerPage)} onPageChange={setCurrentPage}/>
         </div>
       </div>
       <ModalMobile isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal}/>
