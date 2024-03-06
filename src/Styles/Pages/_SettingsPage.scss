@@ -3,8 +3,10 @@
     align-items: center;
     justify-content: center;
 
-    .settings{
+    .settingsInformationAmount{
         width: 83%;
         height: 80vh;
+        display: flex;
+        justify-content: center;
     }
 }
