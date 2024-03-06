@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import fetchAPI from '../../Utils/request';
 import { AuthContext } from '../../Contexts/useAuthContext';
-// import { NavLink } from 'react-router-dom';
 import PaginationNumber from '../PaginationNumber';
 import ClientLine from '../Clientline';
+import { IoIosSearch } from "react-icons/io";
+import { NavLink } from 'react-router-dom';
 
 interface IInformationClientDirectory {
     _id: string
@@ -19,8 +20,9 @@ interface IInformationClientDirectory {
 const InformationClientContent = () => {
     const { informationUser } = useContext(AuthContext);
 
-    const itemsPerPage = 9;
+    const itemsPerPage = 12;
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchTerm, setSearchTerm] = useState("");
     const [informationClientDirectory, setInformationClientDirectory] = useState<IInformationClientDirectory[] | null>(null);
 
     const getInformationClient = async () => {
@@ -36,37 +38,54 @@ const InformationClientContent = () => {
 
     useEffect(() => {
         getInformationClient();
-    }, [informationClientDirectory]);
+    }, []);
 
-    if (informationClientDirectory === null) {
-        setInformationClientDirectory([])
-        return <p>Chargement en cours...</p>;
+    const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(event.target.value);
+        setCurrentPage(1);
     }
+
+    const filteredClients = informationClientDirectory
+        ? informationClientDirectory.filter(client =>
+            client.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            client.lname.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        : [];
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentClient = informationClientDirectory ? informationClientDirectory.slice(indexOfFirstItem, indexOfLastItem) : [];
-    
+    const currentClient = filteredClients.slice(indexOfFirstItem, indexOfLastItem);
 
     return (
         <div className='InformationClientContent'>
+            <div className="search-bar">
+                <input
+                    type="text"
+                    placeholder="Rechercher par nom ou prénom"
+                    value={searchTerm}
+                    onChange={handleSearch}
+                />
+                <IoIosSearch />
+            </div>
             <div className="clientBoardContent">
                 <div className="clientCardContent">
                     {currentClient.map((clientItem, index) => (
-                        <ClientLine 
-                            key={index} 
-                            Name={clientItem.name} 
-                            lName={clientItem.lname} 
-                            email={clientItem.email} 
-                            phoneNumber={clientItem.phoneNumber} 
-                            address={clientItem.address} 
-                            spendAmount={clientItem.spendAmount}
-                            editClient={clientItem.editClientDate}
-                        />
+                        <NavLink to={clientItem._id}>
+                            <ClientLine 
+                                key={index} 
+                                Name={clientItem.name} 
+                                lName={clientItem.lname} 
+                                email={clientItem.email} 
+                                phoneNumber={clientItem.phoneNumber} 
+                                address={clientItem.address} 
+                                spendAmount={clientItem.spendAmount}
+                                editClient={clientItem.editClientDate}
+                            />
+                        </NavLink>
                     ))}
                 </div>
                 <PaginationNumber 
-                    totalPages={Math.ceil(informationClientDirectory.length / itemsPerPage)}
+                    totalPages={Math.ceil(filteredClients.length / itemsPerPage)}
                     currentPage={currentPage}
                     onPageChange={setCurrentPage}
                 />

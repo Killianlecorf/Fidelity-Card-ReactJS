@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../../Components/Header';
 import NavBar from '../../Components/NavBar';
-import SettingsColor from '../../Components/SettingsColor';
 
 const SettingsPage = () => {
     return (
@@ -9,8 +8,8 @@ const SettingsPage = () => {
             <Header />
             <div className="displayDashboard">
                 <NavBar />
-                <div className="settings">
-                    <SettingsColor />
+                <div className="settingsInformationAmount">
+                    <h2>Choisissez vos paramètre d'entreprise</h2>
                 </div>
             </div>
         </div>
