@@ -19,7 +19,6 @@ function App(): JSX.Element {
   if (isLoading) {
     return <p>Loading...</p>;
   }
-  
 
   return (
     <div className="App">

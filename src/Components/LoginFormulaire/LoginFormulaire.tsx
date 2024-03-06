@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useEffect } from 'react';
 import loginSVG from '../../Assets/img/login-svg.svg';
 import fetchAPI from '../../Utils/request';
 import UrlRedirection from "../../Utils/UrlRedirection";
@@ -16,6 +16,17 @@ const LoginFormulaire: React.FC = () => {
     password: '',
     checkbox: false
   });
+
+  useEffect(() => {
+    const checkTokenAndRedirect = async () => {
+      let response = await fetchAPI('/user/redirect', 'GET') 
+      if (response.status === 302) {
+        window.location.href = "/home"; 
+      }
+    };
+
+    checkTokenAndRedirect();
+  }, []);
 
 
   const validationForm = async () => {
